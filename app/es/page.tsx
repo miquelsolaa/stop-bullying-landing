@@ -12,10 +12,10 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen">
       <header className="border-b sticky top-0 z-50 bg-white">
         <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
             <Heart className="h-6 w-6 text-rose-500" />
             <span className="text-xl font-bold">Stop Bullying</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-6">
             <Link href="#inicio" className="text-sm font-medium hover:text-rose-500 transition-colors">
               Inicio
@@ -48,7 +48,7 @@ export default function LandingPage() {
           <div className="container px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-2 items-center">
             <div className="space-y-6 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-                Supera el bullying / mobbing y mejora tus habilidades sociales
+                Supera el bullying o mobbing y mejora tus habilidades sociales
               </h1>
               <p className="text-xl text-gray-700">
                 Resultados desde la primera sesión. Programa personalizado en 6-8 sesiones.
@@ -81,8 +81,8 @@ export default function LandingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Sobre Nosotros</h2>
               <div className="h-1 w-20 bg-rose-500 mx-auto"></div>
               <p className="text-lg text-gray-700 mt-6">
-                En <span className="font-semibold">Stop Bullying / Mobbing</span>, nos dedicamos a ayudar a niños y
-                adultos a desarrollar habilidades sociales para enfrentar el bullying / mobbing y los desafíos interpersonales.
+                En <span className="font-semibold">Stop Bullying o Mobbing</span>, nos dedicamos a ayudar a niños y
+                adultos a desarrollar habilidades sociales para enfrentar el bullying o mobbing y los desafíos interpersonales.
                 Nuestra coach, con más de 10 años de experiencia, ha ayudado a cientos de personas a superar situaciones
                 difíciles y a construir relaciones saludables.
               </p>
@@ -124,7 +124,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-bold">Aprende a enfrentar situaciones difíciles</h3>
                   <p className="text-gray-600">
                     Desarrolla estrategias efectivas para gestionar conflictos y responder adecuadamente ante el
-                    bullying / mobbing.
+                    bullying o mobbing.
                   </p>
                 </CardContent>
               </Card>
@@ -270,7 +270,7 @@ export default function LandingPage() {
           <div className="container text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold">¡Reserva tu sesión hoy mismo!</h2>
             <p className="text-xl max-w-2xl mx-auto">
-              No esperes más para mejorar tus habilidades sociales y superar el bullying / mobbing. El cambio comienza con un
+              No esperes más para mejorar tus habilidades sociales y superar el bullying o mobbing. El cambio comienza con un
               primer paso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -332,6 +332,9 @@ export default function LandingPage() {
                 </a>
               </div>
             </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; {new Date().getFullYear()} Stop Bullying o Mobbing. Tots els drets reservats.</p>
           </div>
         </div>
       </footer>

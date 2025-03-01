@@ -47,7 +47,7 @@ export default function LandingPage() {
           <div className="container px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-2 items-center">
             <div className="space-y-6 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-                Supera el bullying i millora les teves habilitats socials
+                Supera el bullying o mobbing i millora les teves habilitats socials
               </h1>
               <p className="text-xl text-gray-700">
                 Resultats des de la primera sessió. Programa personalitzat en 6-8 sessions.
@@ -80,8 +80,8 @@ export default function LandingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Sobre Nosaltres</h2>
               <div className="h-1 w-20 bg-rose-500 mx-auto"></div>
               <p className="text-lg text-gray-700 mt-6">
-                A <span className="font-semibold">Stop Bullying / Mobbing</span>, ens dediquem a ajudar nens i adults a
-                desenvolupar habilitats socials per afrontar el bullying / mobbing i els reptes interpersonals. La nostra coach,
+                A <span className="font-semibold">Stop Bullying o Mobbing</span>, ens dediquem a ajudar nens i adults a
+                desenvolupar habilitats socials per afrontar el bullying o mobbing i els reptes interpersonals. La nostra coach,
                 amb més de 10 anys d'experiència, ha ajudat a centenars de persones a superar situacions difícils i a
                 construir relacions saludables.
               </p>
@@ -123,7 +123,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-bold">Aprèn a afrontar situacions difícils</h3>
                   <p className="text-gray-600">
                     Desenvolupa estratègies efectives per gestionar conflictes i respondre adequadament davant del
-                    bullying / mobbing.
+                    bullying o mobbing.
                   </p>
                 </CardContent>
               </Card>
@@ -264,7 +264,7 @@ export default function LandingPage() {
           <div className="container text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold">Reserva la teva sessió avui mateix!</h2>
             <p className="text-xl max-w-2xl mx-auto">
-              No esperis més per millorar les teves habilitats socials i superar el bullying / mobbing. El canvi comença amb un
+              No esperis més per millorar les teves habilitats socials i superar el bullying o mobbing. El canvi comença amb un
               primer pas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -335,7 +335,7 @@ export default function LandingPage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; {new Date().getFullYear()} Stop Bullying / Mobbing. Tots els drets reservats.</p>
+            <p>&copy; {new Date().getFullYear()} Stop Bullying o Mobbing. Tots els drets reservats.</p>
           </div>
         </div>
       </footer>
