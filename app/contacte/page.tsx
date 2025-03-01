@@ -65,7 +65,7 @@ export default function ContactPage() {
 
 
                 <form name="form" className="space-y-6" netlify method="post">
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="form" />
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
