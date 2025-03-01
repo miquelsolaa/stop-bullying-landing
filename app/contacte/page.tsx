@@ -63,51 +63,49 @@ export default function ContactePage() {
                 <form 
                   name="contact"
                   method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  //action="/success"
+                  netlify="true"
+                  action="/thank-you"
                   className="space-y-6"
                 >
                   <input type="hidden" name="form-name" value="contact" />
-                  <input type="hidden" name="bot-field" />
 
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
                     </label>
-                    <Input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full" />
+                    <input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent" />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
                       Correu electrònic
                     </label>
-                    <Input name="email" id="email" type="email" placeholder="El teu correu electrònic" required className="w-full" />
+                    <input name="email" id="email" type="email" placeholder="El teu correu electrònic" required className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent" />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm font-medium">
                       Telèfon
                     </label>
-                    <Input name="phone" id="phone" type="tel" placeholder="El teu número de telèfon" className="w-full" />
+                    <input name="phone" id="phone" type="tel" placeholder="El teu número de telèfon" className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent" />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
                       Missatge
                     </label>
-                    <Textarea
+                    <textarea
                       name="message"
                       id="message"
                       placeholder="Explica'ns com podem ajudar-te"
                       required
-                      className="w-full min-h-[150px]"
+                      className="w-full min-h-[150px] rounded-md border border-gray-300 px-3 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-rose-500 hover:bg-rose-600">
+                  <button type="submit" className="w-full bg-rose-500 hover:bg-rose-600 text-white py-2 px-4 rounded-md transition-colors">
                     Envia la teva sol·licitud
-                  </Button>
+                  </button>
                 </form>
               </div>
 
