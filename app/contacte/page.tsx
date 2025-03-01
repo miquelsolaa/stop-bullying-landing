@@ -63,7 +63,7 @@ export default function ContactePage() {
                   </p>
                 </div>
 
-                <form className="space-y-6">
+                <form className="space-y-6" netlify>
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
@@ -144,14 +144,14 @@ export default function ContactePage() {
                   </div>
                 </div>
 
-                <div className="relative h-[300px] rounded-xl overflow-hidden shadow-md">
+                {/* <div className="relative h-[300px] rounded-xl overflow-hidden shadow-md">
                   <Image
                     src="/placeholder.svg?height=600&width=800"
                     alt="Mapa de localització"
                     fill
                     className="object-cover"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
