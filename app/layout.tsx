@@ -14,8 +14,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Get the current path to determine language
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+  const lang = currentPath.startsWith('/es') ? 'es' : 'ca'
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body>{children}</body>
     </html>
   )
