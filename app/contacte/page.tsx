@@ -1,15 +1,11 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Heart, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
-
-[/*export const metadata = {
-  title: "Contacte",
-}*/]
-
-"use client";
 
 export default function ContactePage() {
   return (
