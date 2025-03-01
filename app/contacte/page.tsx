@@ -5,12 +5,13 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Heart, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 
-export const metadata = {
+[/*export const metadata = {
   title: "Contacte",
-}
+}*/]
+
+"use client";
 
 export default function ContactePage() {
-  // Your contact page content
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b sticky top-0 z-50 bg-white">
@@ -64,50 +65,49 @@ export default function ContactePage() {
                 </div>
 
                 <form 
-                                  name="contact" 
-                                  method="POST"
-                                  data-netlify="true"
-                                  netlify-honeypot="bot-field"
-                                  className="space-y-6"
-                                >
-                                  <input type="hidden" name="form-name" value="contact" />
-                                  <div hidden>
-                                    <input name="bot-field" />
-                                  </div>
-                  
-                                  <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-medium">
-                                      Nom
-                                    </label>
-                                    <Input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full" />
-                                  </div>
-                  
-                                  <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium">
-                                      Correu electrònic
-                                    </label>
-                                    <Input name="email" id="email" type="email" placeholder="El teu correu electrònic" required className="w-full" />
-                                  </div>
-                  
-                                  <div className="space-y-2">
-                                    <label htmlFor="phone" className="text-sm font-medium">
-                                      Telèfon
-                                    </label>
-                                    <Input name="phone" id="phone" type="tel" placeholder="El teu número de telèfon" className="w-full" />
-                                  </div>
-                  
-                                  <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium">
-                                      Missatge
-                                    </label>
-                                    <Textarea
-                                      name="message"
-                                      id="message"
-                                      placeholder="Explica'ns com podem ajudar-te"
-                                      required
-                                      className="w-full min-h-[150px]"
-                                    />
-                                  </div>
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  //action="/success"
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
+
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium">
+                      Nom
+                    </label>
+                    <Input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Correu electrònic
+                    </label>
+                    <Input name="email" id="email" type="email" placeholder="El teu correu electrònic" required className="w-full" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-medium">
+                      Telèfon
+                    </label>
+                    <Input name="phone" id="phone" type="tel" placeholder="El teu número de telèfon" className="w-full" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium">
+                      Missatge
+                    </label>
+                    <Textarea
+                      name="message"
+                      id="message"
+                      placeholder="Explica'ns com podem ajudar-te"
+                      required
+                      className="w-full min-h-[150px]"
+                    />
+                  </div>
 
                   <Button type="submit" className="w-full bg-rose-500 hover:bg-rose-600">
                     Envia la teva sol·licitud
