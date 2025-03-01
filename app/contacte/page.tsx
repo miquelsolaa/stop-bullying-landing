@@ -63,17 +63,25 @@ export default function ContactePage() {
                 <form 
                   name="contact"
                   method="POST"
-                  netlify="true"
+                  data-netlify="true"
                   action="/thank-you"
                   className="space-y-6"
                 >
                   <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="subject" value="New Contact Form Submission" />
 
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
                     </label>
-                    <input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent" />
+                    <input 
+                      name="name" 
+                      id="name" 
+                      type="text" 
+                      placeholder="El teu nom complet" 
+                      required 
+                      className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent" 
+                    />
                   </div>
 
                   <div className="space-y-2">
