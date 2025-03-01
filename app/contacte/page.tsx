@@ -62,15 +62,10 @@ export default function ContactPage() {
                     Omple el formulari i ens posarem en contacte amb tu el més aviat possible.
                   </p>
                 </div>
-                
-                <form name="form" netlify netlify-honeypot="bot-field" hidden>
-                  <input type="name" name="name" />
-                  <input type="email" name="email" />
-                  <input type="tel" name="telefon" />
-                  <textarea name="missatge"></textarea>
-                </form>
 
-                <form name="form" className="space-y-6">
+
+                <form name="form" className="space-y-6" netlify method="post">
+                <input type="hidden" name="form-name" value="contact" />
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
