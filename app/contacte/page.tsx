@@ -63,7 +63,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <form className="space-y-6">
+                <form name="form" className="space-y-6" netlify>
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
