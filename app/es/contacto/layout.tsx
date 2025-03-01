@@ -1,10 +1,7 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s",
-    default: "Contacto",
-  },
+  title: "Contacto",
   description: "Ponte en contacto con nosotros para cualquier consulta o para reservar tu primera sesión.",
 }
 
