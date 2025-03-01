@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Ponte en contacto con nosotros para cualquier consulta o para reservar tu primera sesión.",
 }
 
-export default function ContacteLayout({
+export default function SpanishLayout({
   children,
 }: {
   children: React.ReactNode
