@@ -68,21 +68,21 @@ export default function ContactPage() {
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
                     </label>
-                    <Input id="name" type="text" placeholder="El teu nom complet" required className="w-full" />
+                    <Input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full" />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
                       Correu electrònic
                     </label>
-                    <Input id="email" type="email" placeholder="El teu correu electrònic" required className="w-full" />
+                    <Input name="email" id="email" type="email" placeholder="El teu correu electrònic" required className="w-full" />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm font-medium">
                       Telèfon
                     </label>
-                    <Input id="phone" type="tel" placeholder="El teu número de telèfon" className="w-full" />
+                    <Input name="telefon" id="phone" type="tel" placeholder="El teu número de telèfon" className="w-full" />
                   </div>
 
                   <div className="space-y-2">
@@ -90,6 +90,7 @@ export default function ContactPage() {
                       Missatge
                     </label>
                     <Textarea
+                      name="missatge"
                       id="message"
                       placeholder="Explica'ns com podem ajudar-te"
                       required
