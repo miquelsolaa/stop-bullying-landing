@@ -55,7 +55,7 @@ export default function LandingPage() {
               <div className="flex justify-center md:justify-start">
                 <Link href="/contacte">
                   <Button size="lg" className="w-full sm:w-auto bg-rose-500 hover:bg-rose-600 text-lg">
-                    Reserva una consulta gratuïta
+                    Reserva una consulta
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -228,7 +228,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-bold">1. Reserva</h3>
                 <p className="text-gray-600">
-                  Programa una consulta gratuïta per avaluar les teves necessitats específiques.
+                  Programa una consulta per avaluar les teves necessitats específiques.
                 </p>
               </div>
 
@@ -270,7 +270,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contacte">
               <Button size="lg" className="bg-white text-rose-500 hover:bg-gray-100 text-lg">
-                Reserva una consulta gratuïta
+                Reserva una consulta
               </Button>
               </Link>
               <Link href="/contacte">
@@ -300,8 +300,8 @@ export default function LandingPage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contacte</h3>
               <p className="text-gray-400">Terrassa, Barcelona</p>
-              <p className="text-gray-400">info@stopbullying.cat</p>
-              <p className="text-gray-400">+34 93 123 45 67</p>
+              <p className="text-gray-400">hcomunicativesisocials@gmail.com</p>
+              <p className="text-gray-400">+34 646 35 78 01</p>
             </div>
 
             <div>

@@ -117,7 +117,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium">Correu electrònic</h3>
-                        <p className="text-gray-600">info@stopbullying.cat</p>
+                        <p className="text-gray-600">hcomunicativesisocials@gmail.com</p>
                       </div>
                     </div>
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium">Telèfon</h3>
-                        <p className="text-gray-600">+34 93 123 45 67</p>
+                        <p className="text-gray-600">+34 646 35 78 01</p>
                       </div>
                     </div>
 
@@ -193,7 +193,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold mb-4">Contacte</h3>
               <p className="text-gray-400">Terrassa, Barcelona</p>
               <p className="text-gray-400">info@stopbullying.cat</p>
-              <p className="text-gray-400">+34 93 123 45 67</p>
+              <p className="text-gray-400">+34 646 35 78 01</p>
             </div>
 
             <div>
