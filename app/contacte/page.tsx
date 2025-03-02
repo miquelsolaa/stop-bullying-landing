@@ -64,7 +64,7 @@ export default function ContactPage() {
                 </div>
 
 
-                <form name="form" className="space-y-6" netlify method="post">
+                <form name="form" className="space-y-6" method="post" netlify>
                 <input type="hidden" name="form-name" value="form" />
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
@@ -168,7 +168,7 @@ export default function ContactPage() {
               Contacta'ns avui mateix i comença el teu camí cap a relacions més saludables i una millor autoestima.
             </p>
             <Button size="lg" className="bg-white text-rose-500 hover:bg-gray-100 text-lg">
-              Reserva una consulta gratuïta
+              Reserva una consulta
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

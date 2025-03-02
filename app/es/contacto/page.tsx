@@ -171,7 +171,7 @@ export default function ContactPage() {
               className="bg-white text-rose-500 hover:bg-gray-100 text-lg"
               onClick={() => document.getElementById("contact-form").scrollIntoView({ behavior: "smooth" })}
             >
-              Reserva una consulta gratuita
+              Reserva una consulta
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
