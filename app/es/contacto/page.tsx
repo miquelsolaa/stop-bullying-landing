@@ -6,8 +6,33 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Heart, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { useState } from "react"
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      setSubmitStatus('success');
+      (event.target as HTMLFormElement).reset();
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b sticky top-0 z-50 bg-white">
@@ -65,7 +90,8 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} name="contact" className="space-y-6">
+                <input type="hidden" name="form-name" value="contact" />
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nombre
@@ -99,9 +125,25 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-rose-500 hover:bg-rose-600">
-                    Envía tu solicitud
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-rose-500 hover:bg-rose-600" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Enviando..." : "Envia tu solicitud"}
                   </Button>
+
+                  {submitStatus === 'success' && (
+                    <p className="text-green-600 text-center">
+                      Gracias por tu mensaje! Te contactaremos en breve.
+                    </p>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <p className="text-red-600 text-center">
+                      Ha habido un error. Por favor, vuelve a intentarlo más tarde.
+                    </p>
+                  )}
                 </form>
               </div>
 
@@ -166,6 +208,7 @@ export default function ContactPage() {
             <p className="text-xl max-w-2xl mx-auto">
               Contáctanos hoy mismo y comienza tu camino hacia relaciones más saludables y una mejor autoestima.
             </p>
+            <Link href="/contacto">
             <Button
               size="lg"
               className="bg-white text-rose-500 hover:bg-gray-100 text-lg"
@@ -174,6 +217,7 @@ export default function ContactPage() {
               Reserva una consulta
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+            </Link>
           </div>
         </section>
       </main>

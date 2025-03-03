@@ -6,8 +6,33 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Heart, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      setSubmitStatus('success');
+      (event.target as HTMLFormElement).reset();
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b sticky top-0 z-50 bg-white">
@@ -64,13 +89,14 @@ export default function ContactPage() {
                 </div>
 
 
-                <form name="form" className="space-y-6" method="post" netlify>
-                <input type="hidden" name="form-name" value="form" />
+                <form onSubmit={handleSubmit} name="contact" className="space-y-6">
+                  <input type="hidden" name="form-name" value="contact" />
+                  
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Nom
                     </label>
-                    <Input name="name" id="name" type="text" placeholder="El teu nom complet" required className="w-full" />
+                    <Input id="name" name="name" type="text" placeholder="El teu nom complet" required className="w-full" />
                   </div>
 
                   <div className="space-y-2">
@@ -100,9 +126,25 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-rose-500 hover:bg-rose-600">
-                    Envia la teva sol·licitud
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-rose-500 hover:bg-rose-600" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Enviant..." : "Envia la teva sol·licitud"}
                   </Button>
+
+                  {submitStatus === 'success' && (
+                    <p className="text-green-600 text-center">
+                      Gràcies pel teu missatge! Et contactarem aviat.
+                    </p>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <p className="text-red-600 text-center">
+                      Hi ha hagut un error. Si us plau, torna-ho a provar més tard.
+                    </p>
+                  )}
                 </form>
               </div>
 
@@ -131,19 +173,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
-                      <div className="bg-rose-100 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-rose-500" />
-                      </div>
-                      <div>
-                        <h3 className="font-medium">Adreça</h3>
-                        <p className="text-gray-600">
-                          Carrer Principal, 123
-                          <br />
-                          08221 Terrassa, Barcelona
-                        </p>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
 

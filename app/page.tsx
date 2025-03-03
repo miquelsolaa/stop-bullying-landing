@@ -5,8 +5,29 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, MessageCircle, Award, ArrowRight, Calendar, CheckCircle, Users, Star } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { useState, useEffect } from "react"
 
 export default function LandingPage() {
+  const [currentImage, setCurrentImage] = useState(0)
+  const images = [
+    {
+      src: "/image.png?height=800&width=600",
+      alt: "Coaching de comunicació"
+    },
+    {
+      src: "/mobbing.png?height=800&width=600",
+      alt: "Sessions de coaching"
+    }
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 5000) // Switch every 5 seconds
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b sticky top-0 z-50 bg-white">
@@ -62,13 +83,18 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src="/image.png?height=800&width=600"
-                alt="Coaching de comunicació"
-                fill
-                className="object-cover"
-                priority
-              />
+              {images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className={`object-cover transition-opacity duration-500 ${
+                    currentImage === index ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority={index === 0}
+                />
+              ))}
             </div>
           </div>
         </section>
