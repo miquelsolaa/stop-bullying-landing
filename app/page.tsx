@@ -7,6 +7,9 @@ import { Heart, MessageCircle, Award, ArrowRight, Calendar, CheckCircle, Users, 
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useState, useEffect } from "react"
 
+// Replace the existing header with the Navbar component
+import { Navbar } from '@/components/navbar'
+
 export default function LandingPage() {
   const [currentImage, setCurrentImage] = useState(0)
   const images = [
@@ -30,38 +33,7 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b sticky top-0 z-50 bg-white">
-        <div className="container flex h-16 items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-rose-500" />
-            <span className="text-xl font-bold">Stop Bullying</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="#inici" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Inici
-            </Link>
-            <Link href="#sobre-nosaltres" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Sobre Nosaltres
-            </Link>
-            <Link href="#beneficis" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Beneficis
-            </Link>
-            <Link href="#testimonis" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Testimonis
-            </Link>
-            <Link href="#com-funciona" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Com Funciona
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <Link href="/contacte">
-              <Button className="bg-rose-500 hover:bg-rose-600">Contacta'ns</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
-
+      <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
         <section id="inici" className="relative py-20 md:py-28 bg-gradient-to-r from-amber-50 to-rose-50">

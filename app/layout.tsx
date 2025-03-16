@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Stop Bullying i Mobbing | Ajuda i Suport a Barcelona',
+    default: 'Stop Bullying i Mobbing | Ajuda i Suport a Barcelona'
   },
   description: "T'ajudem a superar el bullying o mobbing amb sessions personalitzades a Barcelona. Consulta amb una coach experta.",
   keywords: [
@@ -66,13 +67,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Get the current path to determine language
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
   const lang = currentPath.startsWith('/es') ? 'es' : 'ca'
 
   return (
     <html lang={lang}>
-      <body>{children}</body>
+      <head />
+      <body>
+        {children}
+        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+      </body>
     </html>
   )
 }
