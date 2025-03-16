@@ -11,11 +11,11 @@ export default function LandingPage() {
   const [currentImage, setCurrentImage] = useState(0)
   const images = [
     {
-      src: "/image.png?height=800&width=600",
+      src: "/image.png",
       alt: "Coaching de comunicació"
     },
     {
-      src: "/mobbing.png?height=800&width=600",
+      src: "/mobbing.png",
       alt: "Sessions de coaching"
     }
   ]
@@ -89,10 +89,12 @@ export default function LandingPage() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  priority={true}
+                  loading="eager"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className={`object-cover transition-opacity duration-500 ${
                     currentImage === index ? "opacity-100" : "opacity-0"
                   }`}
-                  priority={index === 0}
                 />
               ))}
             </div>
