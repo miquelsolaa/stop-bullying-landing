@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Heart, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useState } from "react"
+import { NavbarES } from "@/components/navbar-es"
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,37 +36,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b sticky top-0 z-50 bg-white">
-        <div className="container flex h-16 items-center justify-between py-4">
-          <Link href="/es" className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-rose-500" />
-            <span className="text-xl font-bold">Stop Bullying</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/es#inicio" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Inicio
-            </Link>
-            <Link href="/es#sobre-nosotros" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Sobre Nosotros
-            </Link>
-            <Link href="/es#beneficios" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Beneficios
-            </Link>
-            <Link href="/es#testimonios" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Testimonios
-            </Link>
-            <Link href="/es#como-funciona" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Cómo Funciona
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <Button className="bg-rose-500 hover:bg-rose-600" aria-current="page">
-              Contáctanos
-            </Button>
-          </div>
-        </div>
-      </header>
+      <NavbarES />
 
       <main className="flex-1">
         {/* Hero Section */}

@@ -1,12 +1,16 @@
 import { MetadataRoute } from 'next'
+import { getBlogPosts } from '@/utils/getBlogPosts'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://stopbullyingmobbing.com'
 
-  const routes = [
+  // Static routes
+  const staticRoutes = [
     '',
     '/contacte',
+    '/blog',
     '/es',
+    '/es/blog',
     '/es/contacto',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
@@ -15,5 +19,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' || route === '/es' ? 1 : 0.8,
   }))
 
-  return routes
+  // Get blog posts
+  const posts = await getBlogPosts()
+  const blogRoutes = posts.map((post) => [
+    {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/es/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }
+  ]).flat()
+
+  return [...staticRoutes, ...blogRoutes]
 }

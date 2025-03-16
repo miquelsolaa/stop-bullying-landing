@@ -8,6 +8,7 @@ import { Heart, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useState } from "react";
 
+
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -35,35 +36,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b sticky top-0 z-50 bg-white">
-        <div className="container flex h-16 items-center justify-between py-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-rose-500" />
-            <span className="text-xl font-bold">Stop Bullying</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/#inici" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Inici
-            </Link>
-            <Link href="/#sobre-nosaltres" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Sobre Nosaltres
-            </Link>
-            <Link href="/#beneficis" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Beneficis
-            </Link>
-            <Link href="/#testimonis" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Testimonis
-            </Link>
-            <Link href="/#com-funciona" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Com Funciona
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <Button className="bg-rose-500 hover:bg-rose-600">Contacta'ns</Button>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="flex-1">
         {/* Hero Section */}

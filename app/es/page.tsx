@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Heart, MessageCircle, Award, ArrowRight, Calendar, CheckCircle, Users, Star } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useState, useEffect } from "react"
+import { NavbarES } from "@/components/navbar-es"
 
 export default function LandingPage() {
   const [currentImage, setCurrentImage] = useState(0)
@@ -30,37 +31,7 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b sticky top-0 z-50 bg-white">
-        <div className="container flex h-16 items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-rose-500" />
-            <span className="text-xl font-bold">Stop Bullying</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="#inicio" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Inicio
-            </Link>
-            <Link href="#sobre-nosotros" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Sobre Nosotros
-            </Link>
-            <Link href="#beneficios" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Beneficios
-            </Link>
-            <Link href="#testimonios" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Testimonios
-            </Link>
-            <Link href="#como-funciona" className="text-sm font-medium hover:text-rose-500 transition-colors">
-              Cómo Funciona
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <Link href="/es/contacto">
-              <Button className="bg-rose-500 hover:bg-rose-600">Contáctanos</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <NavbarES />
 
       <main className="flex-1">
         {/* Hero Section */}
