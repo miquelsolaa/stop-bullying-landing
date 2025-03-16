@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contacte | Stop Bullying i Mobbing",
+  title: "Contacte",
   description: "Posa't en contacte amb nosaltres per a qualsevol consulta o per reservar la teva primera sessió.",
 }
 

@@ -3,10 +3,29 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Stop Bullying i Mobbing | Terrassa',
+    default: 'Stop Bullying i Mobbing | Ajuda i Suport a Barcelona',
+    template: '%s | Stop Bullying i Mobbing a Barcelona'
   },
-  description: 'Servei especialitzat en coaching de comunicació per superar el bullying i mobbing. Sessions personalitzades a Terrassa amb resultats des de la primera sessió.',
-  keywords: ['bullying', 'mobbing', 'habilitats comunicatives', 'comunicació', 'habilitats socials', 'Terrassa', 'Barcelona'],
+  description: "T'ajudem a superar el bullying o mobbing amb sessions personalitzades a Barcelona. Consulta amb una coach experta.",
+  keywords: [
+    'bullying a Barcelona',
+    'mobbing a Barcelona',
+    'coach bullying Barcelona',
+    'ajuda bullying adults Barcelona',
+    'sessions coaching mobbing',
+    'com superar el bullying',
+    'teràpia per bullying Barcelona',
+    'tractament mobbing laboral Barcelona',
+    'superar el bullying escolar',
+    'coach per a víctimes de mobbing laboral',
+    'ajuda psicològica bullying i mobbing',
+    'teràpia especialitzada per bullying infantil',
+    'sessions individuals bullying',
+    'suport emocional mobbing feina',
+    'especialista bullying nens adolescents',
+    'Terrassa',
+    'Barcelona',
+  ],
   authors: [{ name: 'Stop Bullying i Mobbing' }],
   creator: 'Stop Bullying i Mobbing',
   publisher: 'Stop Bullying i Mobbing',
@@ -28,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stop Bullying i Mobbing | Coaching de Comunicació',
     description: 'Supera el bullying i mobbing amb sessions personalitzades de coaching. Millora les teves habilitats socials i autoestima.',
-    url: 'https://stopbullying.com',
+    url: 'https://stopbullyingmobbing.com',
     siteName: 'Stop Bullying i Mobbing',
     locale: 'ca_ES',
     type: 'website',
