@@ -4,7 +4,6 @@ import './globals.css'
 export const metadata: Metadata = {
   title: {
     default: 'Stop Bullying i Mobbing | Ajuda i Suport a Barcelona',
-    template: '%s | Stop Bullying i Mobbing a Barcelona'
   },
   description: "T'ajudem a superar el bullying o mobbing amb sessions personalitzades a Barcelona. Consulta amb una coach experta.",
   keywords: [

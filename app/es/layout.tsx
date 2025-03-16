@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Stop Bullying y Mobbing | Terrassa",
+  title: "Stop Bullying y Mobbing | Ayuda y Soporte en Barcelona",
   description: "Ayudamos a niños y adultos a desarrollar habilidades sociales para enfrentar el bullying y los retos interpersonales.",
 }
 

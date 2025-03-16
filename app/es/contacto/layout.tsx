@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Stop Bullying y Mobbing | Ayuda y Soporte en Barcelona",
+  title: "Contacto | Stop Bullying y Mobbing en Barcelona",
   description: "Ponte en contacto con nosotros para cualquier consulta o para reservar tu primera sesión. Servicio especializado en coaching de comunicación en Terrassa.",
   keywords: ["bullying", "mobbing", "coaching", "comunicación", "habilidades sociales", "Terrassa", "Barcelona"],
   alternates: {

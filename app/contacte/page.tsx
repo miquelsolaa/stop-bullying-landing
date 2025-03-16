@@ -159,7 +159,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium">Correu electrònic</h3>
-                        <p className="text-gray-600">hcomunicativesisocials@gmail.com</p>
+                        <p className="text-gray-600">contacte@stopbullyingmobbing.com</p>
                       </div>
                     </div>
 

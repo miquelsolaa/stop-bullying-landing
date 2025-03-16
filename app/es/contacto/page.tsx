@@ -159,7 +159,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium">Correo electrónico</h3>
-                        <p className="text-gray-600">info@stopbullying.cat</p>
+                        <p className="text-gray-600">contacte@stopbullyingmobbing.com</p>
                       </div>
                     </div>
 
@@ -173,19 +173,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
-                      <div className="bg-rose-100 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-rose-500" />
-                      </div>
-                      <div>
-                        <h3 className="font-medium">Dirección</h3>
-                        <p className="text-gray-600">
-                          Calle Principal, 123
-                          <br />
-                          08221 Terrassa, Barcelona
-                        </p>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
 
