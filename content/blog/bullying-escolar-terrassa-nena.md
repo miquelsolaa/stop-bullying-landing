@@ -2,7 +2,7 @@
 title: "Cas real: Nena de 8 anys assetjada al pati de l'escola"
 date: 2025-03-17T12:04:00.000Z
 thumbnail: /images/466160251_9671088369574488_5448433459961667636_n.jpg
-description: Nena patint bullying
+description: Nena de 8 anys pateix assetjament escolar al pati de l’escola i busca estratègies per passar desapercebuda. Descobreix com detectar i afrontar el bullying.
 ---
 Aquesta setmana, a la nostra consulta de **Stop Bullying Mobbing a Terrassa**, hem atès un nou cas que posa de manifest la importància de detectar l’assetjament escolar a temps. 
 
