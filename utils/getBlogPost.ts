@@ -5,17 +5,39 @@ import { remark } from 'remark'
 import html from 'remark-html'
 
 export async function getBlogPost(slug: string) {
-  const filePath = path.join(process.cwd(), 'content/blog', `${slug}.md`)
+  const blogDir = path.join(process.cwd(), 'content/blog')
+  
+  // Decode the URL-encoded slug
+  const decodedSlug = decodeURIComponent(slug)
+  
+  // Get all files in the blog directory
+  const files = fs.readdirSync(blogDir)
+  
+  // Find the file that matches the slug when normalized
+  const file = files.find(filename => 
+    filename.toLowerCase().replace(/['']/g, '').replace(/\.md$/, '') === 
+    decodedSlug.toLowerCase().replace(/['']/g, '')
+  )
+
+  if (!file) {
+    throw new Error(`Blog post ${decodedSlug} not found`)
+  }
+
+  const filePath = path.join(blogDir, file)
   const fileContent = fs.readFileSync(filePath, 'utf8')
   
   const { data, content } = matter(fileContent)
   const processedContent = await remark()
     .use(html)
     .process(content)
-  
+  const contentHtml = processedContent.toString()
+
   return {
-    ...data,
-    content: processedContent.toString(),
     slug,
+    title: data.title,
+    date: data.date,
+    thumbnail: data.thumbnail,
+    description: data.description,
+    content: contentHtml,
   }
 }
