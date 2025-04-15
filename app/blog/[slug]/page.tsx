@@ -1,12 +1,22 @@
 import { getBlogPost } from '@/utils/getBlogPost'
 import { getBlogPosts } from '@/utils/getBlogPosts'
 import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { generateMetadata as generateSiteMetadata } from '../../metadata'
+import type { Metadata } from 'next'
 
-// Generate static pages for all blog posts
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = await getBlogPost(params.slug)
+  
+  return generateSiteMetadata({
+    title: post.title,
+    description: post.description,
+    path: `/blog/${params.slug}`
+  })
+}
+
 export async function generateStaticParams() {
   const posts = await getBlogPosts()
   return posts.map((post) => ({
@@ -54,7 +64,7 @@ export default async function BlogPostPage({
               Tornar al blog
             </Link>
 
-            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-rose-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-img:rounded-xl">
+            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-img:rounded-xl">
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
 
@@ -77,7 +87,6 @@ export default async function BlogPostPage({
           </div>
         </article>
       </main>
-      <Footer />
     </div>
   )
 }

@@ -12,8 +12,7 @@ export function Footer() {
               <span className="text-xl font-bold">Stop Bullying</span>
             </div>
             <p className="text-gray-400">
-              Servei de coaching de comunicació basat a Terrassa que ajuda nens i adults a desenvolupar habilitats
-              socials.
+            Servei de coaching de comunicació a Terrassa, especialitzat en ajudar nens i adults a superar el bullying, el mobbing i a desenvolupar habilitats socials per millorar les seves relacions personals i laborals.
             </p>
           </div>
 

@@ -131,7 +131,12 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium break-words">Correo electrónico</h3>
-                        <p className="text-gray-600 break-all">contacte@stopbullyingmobbing.com</p>
+                        <a 
+                          href="mailto:contacte@stopbullyingmobbing.com" 
+                          className="text-gray-600 break-all hover:text-rose-500 transition-colors"
+                        >
+                          contacte@stopbullyingmobbing.com
+                        </a>
                       </div>
                     </div>
 
@@ -141,7 +146,12 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium break-words">Teléfono</h3>
-                        <p className="text-gray-600">+34 646 35 78 01</p>
+                        <a 
+                          href="tel:+34646357801" 
+                          className="text-gray-600 hover:text-rose-500 transition-colors"
+                        >
+                          +34 646 35 78 01
+                        </a>
                       </div>
                     </div>
                   </div>

@@ -1,13 +1,15 @@
 import { getBlogPosts } from '@/utils/getBlogPosts'
 import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateMetadata } from '../metadata'
+import type { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Blog | Stop Bullying i Mobbing',
-  description: 'Articles i recursos sobre bullying, mobbing i habilitats socials',
-}
+export const metadata: Metadata = generateMetadata({
+  title: "Blog",
+  description: "Articles i recursos sobre bullying, mobbing i habilitats socials. Consells d'experts per superar l'assetjament escolar i laboral.",
+  path: "/blog"
+})
 
 export default async function BlogPage() {
   const posts = await getBlogPosts()
@@ -57,7 +59,6 @@ export default async function BlogPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }

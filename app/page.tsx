@@ -9,7 +9,7 @@ import { useState, useEffect } from "react"
 
 // Replace the existing header with the Navbar component
 import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
+import { FAQ } from "@/components/faq"
 
 export default function LandingPage() {
   const [currentImage, setCurrentImage] = useState(0)
@@ -41,10 +41,10 @@ export default function LandingPage() {
           <div className="container px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-2 items-center">
             <div className="space-y-6 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-                Supera el bullying o mobbing i millora les teves habilitats socials
+              Supera el bullying o mobbing i millora les teves habilitats socials per millorar el teu benestar
               </h1>
               <p className="text-xl text-gray-700">
-                Resultats des de la primera sessió. Programa personalitzat en 6-8 sessions.
+              Supera el bullying o mobbing i millora les teves habilitats socials en només 6-8 sessions personalitzades, amb resultats visibles des de la primera sessió.
               </p>
               <div className="flex justify-center md:justify-start">
                 <Link href="/contacte">
@@ -260,6 +260,8 @@ export default function LandingPage() {
           </div>
         </section>
 
+        <FAQ />
+
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-gradient-to-r from-rose-500 to-amber-500 text-white">
           <div className="container text-center space-y-8">
@@ -284,7 +286,6 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <Footer />
     </div>
   )
 }

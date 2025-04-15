@@ -75,3 +75,16 @@
   }
 }
 
+/* Add custom styles for markdown content */
+.prose a {
+  @apply text-rose-500 font-medium no-underline hover:underline hover:text-rose-600 transition-colors;
+}
+
+.prose ul {
+  @apply list-disc pl-6 space-y-2 my-4;
+}
+
+.prose li {
+  @apply text-black;
+}
+
