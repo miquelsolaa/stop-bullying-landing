@@ -88,3 +88,52 @@
   @apply text-black;
 }
 
+/* ... existing code ... */
+
+/* Table styles - single consolidated version */
+.prose table {
+  @apply w-full my-8 border-collapse table-auto border overflow-x-auto;
+}
+
+.prose thead {
+  @apply bg-gray-50;
+}
+
+.prose th {
+  @apply px-4 py-2 text-left text-sm font-semibold text-gray-900 border border-gray-200;
+}
+
+.prose td {
+  @apply px-4 py-2 text-sm text-gray-700 border border-gray-200;
+}
+
+.prose tr {
+  @apply border-b border-gray-200;
+}
+
+.prose tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.prose tr:hover {
+  @apply bg-gray-100;
+}
+
+/* Remove the responsive classes that were hiding the header */
+.prose table thead {
+  @apply table-header-group;
+}
+
+.prose table tbody {
+  @apply table-row-group;
+}
+
+.prose table tr {
+  @apply table-row;
+}
+
+.prose table td {
+  @apply table-cell;
+}
+
+

@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import { defaultMetadata } from './metadata'
 import { Footer } from '@/components/footer'
+import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 
 export const metadata: Metadata = {
   ...defaultMetadata,
@@ -18,7 +19,25 @@ export default function RootLayout({
 
   return (
     <html lang={lang}>
-      <head />
+      <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+            `,
+          }}
+        />
+      </head>
       <body>
         <div className="flex flex-col min-h-screen">
           {children}

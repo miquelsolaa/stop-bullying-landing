@@ -34,6 +34,9 @@ export default async function BlogPage() {
                       src={post.thumbnail}
                       alt={post.title}
                       fill
+                      priority={post.thumbnail.includes('image.png') || post.thumbnail.includes('mobbing.png')}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={75}
                       className="object-cover"
                     />
                   </div>
