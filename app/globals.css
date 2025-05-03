@@ -88,7 +88,17 @@
   @apply text-black;
 }
 
-/* ... existing code ... */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 /* Table styles - single consolidated version */
 .prose table {
@@ -134,6 +144,24 @@
 
 .prose table td {
   @apply table-cell;
+}
+
+/* Mejoras de contraste para botones */
+.button-primary {
+  @apply bg-rose-600 text-white hover:bg-rose-700 focus:ring-2 focus:ring-rose-500 focus:ring-offset-2;
+}
+
+.button-secondary {
+  @apply bg-white text-rose-600 border-2 border-rose-600 hover:bg-rose-50 focus:ring-2 focus:ring-rose-500 focus:ring-offset-2;
+}
+
+/* Mejoras de contraste para enlaces */
+.link-primary {
+  @apply text-rose-700 hover:text-rose-900 underline hover:no-underline focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 font-medium;
+}
+
+.link-footer {
+  @apply text-gray-200 hover:text-white underline hover:no-underline transition-colors focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 font-medium;
 }
 
 

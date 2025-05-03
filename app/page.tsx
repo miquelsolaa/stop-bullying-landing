@@ -272,15 +272,23 @@ export default function LandingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contacte">
-              <Button size="lg" className="bg-white text-rose-500 hover:bg-gray-100 text-lg">
+              <Button 
+                size="lg" 
+                className="button-primary text-lg font-semibold"
+                aria-label="Reserva una consulta gratuita"
+              >
                 Reserva una consulta
               </Button>
-              </Link>
-              <Link href="/contacte">
-              <Button size="lg" className="border-white text-white hover:bg-white/10 text-lg">
-                Més informació
+            </Link>
+            <Link href="/contacte">
+              <Button 
+                size="lg" 
+                className="button-secondary text-lg font-semibold"
+                aria-label="Obtén más información sobre nuestros servicios"
+              >
+                Más información
               </Button>
-              </Link>
+            </Link>
             </div>
           </div>
         </section>

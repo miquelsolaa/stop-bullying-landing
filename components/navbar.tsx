@@ -26,6 +26,10 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button
           className="md:hidden p-2"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
           onClick={(e) => {
             e.stopPropagation()
             setIsOpen(!isOpen)
