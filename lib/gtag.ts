@@ -1,4 +1,4 @@
-export const GA_MEASUREMENT_ID = 'G-S6RNT8WS5V' // Replace with your GA4 measurement ID
+export const GA_MEASUREMENT_ID = 'G-J7RJ6KRMBZ' // Replace with your GA4 measurement ID
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
