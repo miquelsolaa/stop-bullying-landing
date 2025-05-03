@@ -1,0 +1,22 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_USE_NETLIFY_EDGE = "true"
+  NEXT_PRIVATE_TARGET = "server"
+
+[build.processing]
+  skip_processing = true
+
+# Cache configuration
+[[plugins]]
+  package = "netlify-plugin-cache"
+    [plugins.inputs]
+      paths = [
+        ".next/cache",          # Next.js cache
+        "node_modules/.cache"   # Node modules cache
+      ]
