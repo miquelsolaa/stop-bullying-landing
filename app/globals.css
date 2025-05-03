@@ -148,11 +148,11 @@
 
 /* Mejoras de contraste para botones */
 .button-primary {
-  @apply bg-rose-600 text-white hover:bg-rose-700 focus:ring-2 focus:ring-rose-500 focus:ring-offset-2;
+  @apply bg-rose-700 text-white hover:bg-rose-800 focus:ring-2 focus:ring-rose-600 focus:ring-offset-2 font-semibold;
 }
 
 .button-secondary {
-  @apply bg-white text-rose-600 border-2 border-rose-600 hover:bg-rose-50 focus:ring-2 focus:ring-rose-500 focus:ring-offset-2;
+  @apply bg-white text-rose-700 border-2 border-rose-700 hover:bg-rose-50 focus:ring-2 focus:ring-rose-600 focus:ring-offset-2 font-semibold;
 }
 
 /* Mejoras de contraste para enlaces */
