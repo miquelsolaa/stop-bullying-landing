@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run copy-blog && next build",
-    "copy-blog": "powershell -Command \"Copy-Item -Path 'content/blog/*' -Destination 'public/blog/' -Recurse -Force\"",
+    "copy-blog": "cp -r content/blog/* public/blog/",
     "start": "next start",
     "lint": "next lint"
   },
