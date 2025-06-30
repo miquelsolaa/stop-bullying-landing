@@ -14,17 +14,65 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Optimitzacions de cache i rendiment
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: true,
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**', // Permet qualsevol hostname
+        hostname: 'stopbullyingmobbing.com',
       },
       {
         protocol: 'http',
-        hostname: '**', // També permet HTTP per si de cas
+        hostname: 'stopbullyingmobbing.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**', // Permet qualsevol hostname HTTPS
+      },
+      {
+        protocol: 'http',
+        hostname: '**', // Permet qualsevol hostname HTTP
       },
     ],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1 any
+    unoptimized: false,
+    loader: 'default',
+  },
+  // Configuració de cache per a fitxers estàtics
+  async headers() {
+    return [
+      {
+        source: '/blog/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/public/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
   },
   async rewrites() {
     return [
