@@ -7,6 +7,10 @@ import { ArrowLeft } from 'lucide-react'
 import { generateMetadata as generateSiteMetadata } from '../../../metadata'
 import type { Metadata } from 'next'
 
+// Forçar render dinàmic per evitar problemes amb SSG
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
   try {
     const post = await getBlogPost(params.slug, params.locale)

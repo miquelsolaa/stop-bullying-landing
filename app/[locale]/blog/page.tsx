@@ -5,6 +5,10 @@ import Link from 'next/link'
 import { generateMetadata as baseGenerateMetadata } from '../../metadata'
 import type { Metadata } from 'next'
 
+// Forçar render dinàmic per evitar problemes amb SSG
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 const titles = {
   ca: "Blog sobre bullying i mobbing | Consells i recursos útils",
   es: "Blog sobre bullying y mobbing | Consejos y recursos útiles"
