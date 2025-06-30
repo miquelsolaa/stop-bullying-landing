@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run copy-blog && next build",
-    "copy-blog": "cp -r content/blog/* public/blog/",
+    "copy-blog": "cp -r content/blog/* public/blog/ || echo 'No content/blog directory found'",
     "start": "next start",
     "lint": "next lint"
   },
@@ -38,7 +38,7 @@
     "cmdk": "1.0.4",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.454.0",
-    "next": "latest",
+    "next": "^14.2.16",
     "next-intl": "^4.3.1",
     "next-themes": "^0.4.4",
     "react": "^18.3.1",
