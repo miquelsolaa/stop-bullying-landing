@@ -7,7 +7,12 @@ import remarkGfm from 'remark-gfm'
 
 export async function getBlogPost(slug: string, locale: string = 'ca') {
   try {
-    const blogDir = path.join(process.cwd(), 'content/blog', locale)
+    // Try public first (for production), then fallback to content (for development)
+    let blogDir = path.join(process.cwd(), 'public/content/blog', locale)
+    
+    if (!fs.existsSync(blogDir)) {
+      blogDir = path.join(process.cwd(), 'content/blog', locale)
+    }
     
     // Check if directory exists
     if (!fs.existsSync(blogDir)) {

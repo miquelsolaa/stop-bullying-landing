@@ -5,7 +5,13 @@ import matter from 'gray-matter'
 export async function getBlogPosts(locale: string = 'ca') {
   try {
     if (!locale) locale = 'ca';
-    const postsDirectory = path.join(process.cwd(), 'content/blog', locale)
+    
+    // Try public first (for production), then fallback to content (for development)
+    let postsDirectory = path.join(process.cwd(), 'public/content/blog', locale)
+    
+    if (!fs.existsSync(postsDirectory)) {
+      postsDirectory = path.join(process.cwd(), 'content/blog', locale)
+    }
     
     // Check if directory exists
     if (!fs.existsSync(postsDirectory)) {
