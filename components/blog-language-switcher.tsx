@@ -1,14 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useLanguageSwitch } from "@/hooks/useLanguageSwitch"
 import { getTranslatedSlug } from "@/utils/postMapping"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { Languages } from "lucide-react"
 
 export function BlogLanguageSwitcher() {
   const pathname = usePathname()
-  const { switchLanguage } = useLanguageSwitch()
+  const router = useRouter()
   
   // Extract current slug and locale
   const pathSegments = pathname.split('/')
@@ -23,6 +22,11 @@ export function BlogLanguageSwitcher() {
     return null // No translation available
   }
 
+  const handleLanguageSwitch = () => {
+    const newPath = `/${newLocale}/blog/${translatedSlug}`
+    router.push(newPath)
+  }
+
   const localeNames = {
     ca: 'Català',
     es: 'Español'
@@ -35,7 +39,7 @@ export function BlogLanguageSwitcher() {
         {currentLocale === 'es' ? 'Disponible en:' : 'Disponible en:'}
       </span>
       <Button 
-        onClick={switchLanguage} 
+        onClick={handleLanguageSwitch} 
         variant="outline" 
         size="sm"
         className="text-xs"

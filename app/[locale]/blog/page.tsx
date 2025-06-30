@@ -33,7 +33,7 @@ export default async function BlogPage({ params }: { params: { locale: string } 
           <div className="container text-center space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900">Blog</h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Articles i recursos sobre bullying, mobbing i habilitats socials
+              {params.locale === 'es' ? 'Artículos y recursos sobre bullying, mobbing y habilidades sociales' : 'Articles i recursos sobre bullying, mobbing i habilitats socials'}
             </p>
           </div>
         </section>
@@ -53,15 +53,15 @@ export default async function BlogPage({ params }: { params: { locale: string } 
                   </div>
                   <div className="p-6">
                     <time className="text-sm text-gray-500">
-                      {new Date(post.date).toLocaleDateString('ca-ES')}
+                      {new Date(post.date).toLocaleDateString(params.locale === 'es' ? 'es-ES' : 'ca-ES')}
                     </time>
                     <h2 className="text-xl font-bold mt-2 mb-3">{post.title}</h2>
                     <p className="text-gray-600 mb-4">{post.description}</p>
                     <Link 
-                      href={`/blog/${post.slug}`}
+                      href={`/${params.locale}/blog/${post.slug}`}
                       className="text-rose-500 font-medium hover:text-rose-600"
                     >
-                      Llegir més →
+                      {params.locale === 'es' ? 'Leer más →' : 'Llegir més →'}
                     </Link>
                   </div>
                 </article>

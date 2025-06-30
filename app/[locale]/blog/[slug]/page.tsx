@@ -45,18 +45,24 @@ export default async function BlogPostPage({
   try {
     const post = await getBlogPost(params.slug, params.locale)
 
+    if (!post) {
+      throw new Error('Post not found')
+    }
+
     return (
       <div className="flex flex-col min-h-screen">
         <main className="flex-1">
           <article>
             <div className="relative h-[500px] w-full bg-gradient-to-b from-gray-900/90 to-gray-900/90">
-              <Image
-                src={post.thumbnail}
-                alt={post.title}
-                fill
-                className="object-cover mix-blend-overlay"
-                priority
-              />
+              {post.thumbnail && (
+                <Image
+                  src={post.thumbnail}
+                  alt={post.title}
+                  fill
+                  className="object-cover mix-blend-overlay"
+                  priority
+                />
+              )}
               <div className="container relative h-full flex items-end pb-20">
                 <div className="text-white space-y-4 max-w-3xl">
                   <time className="text-gray-200 font-medium">
@@ -109,7 +115,6 @@ export default async function BlogPostPage({
     console.error('Error loading blog post:', error)
     return (
       <div className="flex flex-col min-h-screen">
-        <Navbar />
         <main className="flex-1">
           <div className="container max-w-3xl py-12">
             <h1 className="text-2xl font-bold text-red-600">
