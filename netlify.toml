@@ -26,3 +26,9 @@
         ".next/cache",          # Next.js cache
         "node_modules/.cache"   # Node modules cache
       ]
+
+# Ensure blog files are available
+[[redirects]]
+  from = "/blog/*"
+  to = "/.next/server/pages/blog/:splat"
+  status = 200

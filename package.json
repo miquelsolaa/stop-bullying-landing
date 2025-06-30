@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run copy-blog && next build",
-    "copy-blog": "node scripts/copy-blog.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },

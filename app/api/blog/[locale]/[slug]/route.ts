@@ -16,7 +16,6 @@ export async function GET(
     // Try multiple possible locations for the blog files
     const possiblePaths = [
       path.join(process.cwd(), 'public/blog', locale),
-      path.join(process.cwd(), 'public/content/blog', locale),
       path.join(process.cwd(), 'content/blog', locale)
     ]
     
@@ -42,10 +41,11 @@ export async function GET(
     const files = fs.readdirSync(blogDir)
     
     // Find the file that matches the slug when normalized
-    const file = files.find(filename => 
-      filename.toLowerCase().replace(/['']/g, '').replace(/\.md$/, '') === 
-      decodedSlug.toLowerCase().replace(/['']/g, '')
-    )
+    const file = files.find((filename: string) => {
+      const normalizedFilename = filename.toLowerCase().replace(/['']/g, '').replace(/\.md$/, '')
+      const normalizedSlug = decodedSlug.toLowerCase().replace(/['']/g, '')
+      return normalizedFilename === normalizedSlug
+    })
 
     if (!file) {
       return NextResponse.json(
