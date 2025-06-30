@@ -7,8 +7,8 @@ import { ArrowLeft } from 'lucide-react'
 import { generateMetadata as generateSiteMetadata } from '../../../metadata'
 import type { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug)
+export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
+  const post = await getBlogPost(params.slug, params.locale)
   
   return generateSiteMetadata({
     title: post.title,
@@ -17,9 +17,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   })
 }
 
-export async function generateStaticParams() {
-  const posts = await getBlogPosts()
-  return posts.map((post) => ({
+export async function generateStaticParams({ params }: { params: { locale: string } }) {
+  const posts = await getBlogPosts(params.locale)
+  return posts.map((post: any) => ({
     slug: post.slug,
   }))
 }
@@ -27,9 +27,9 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string }
+  params: { slug: string, locale: string }
 }) {
-  const post = await getBlogPost(params.slug)
+  const post = await getBlogPost(params.slug, params.locale)
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -46,7 +46,7 @@ export default async function BlogPostPage({
             <div className="container relative h-full flex items-end pb-20">
               <div className="text-white space-y-4 max-w-3xl">
                 <time className="text-gray-200 font-medium">
-                  {new Date(post.date).toLocaleDateString('ca-ES')}
+                  {new Date(post.date).toLocaleDateString(params.locale === 'es' ? 'es-ES' : 'ca-ES')}
                 </time>
                 <h1 className="text-4xl md:text-5xl font-bold">{post.title}</h1>
                 <p className="text-xl text-gray-200">{post.description}</p>
@@ -56,11 +56,11 @@ export default async function BlogPostPage({
 
           <div className="container max-w-3xl py-12">
             <Link 
-              href="/blog"
+              href={`/${params.locale}/blog`}
               className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Tornar al blog
+              {params.locale === 'es' ? 'Volver al blog' : 'Tornar al blog'}
             </Link>
 
             <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-img:rounded-xl">
@@ -71,16 +71,16 @@ export default async function BlogPostPage({
 
             <div className="flex justify-between items-center">
               <Link 
-                href="/blog"
+                href={`/${params.locale}/blog`}
                 className="text-rose-500 hover:text-rose-600 font-medium"
               >
-                ← Articles recents
+                {params.locale === 'es' ? '← Artículos recientes' : '← Articles recents'}
               </Link>
               <Link 
-                href="/contacte"
+                href={`/${params.locale}/contacte`}
                 className="text-rose-500 hover:text-rose-600 font-medium"
               >
-                Contacta'ns →
+                {params.locale === 'es' ? 'Contáctanos →' : "Contacta'ns →"}
               </Link>
             </div>
           </div>

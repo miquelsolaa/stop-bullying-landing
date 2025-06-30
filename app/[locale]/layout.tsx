@@ -43,23 +43,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <title>{metadata.title as string}</title>
-        <meta name="description" content={metadata.description as string} />
-        <meta name="keywords" content={metadata.keywords?.join(', ')} />
-        <link rel="canonical" href={metadata.alternates?.canonical as string} />
-        {getAlternateLinks(locale, path)}
-        {/* OpenGraph */}
-        <meta property="og:title" content={metadata.openGraph?.title as string} />
-        <meta property="og:description" content={metadata.openGraph?.description as string} />
-        <meta property="og:url" content={metadata.openGraph?.url as string} />
-        <meta property="og:image" content={siteConfig.ogImage} />
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.twitter?.title as string} />
-        <meta name="twitter:description" content={metadata.twitter?.description as string} />
-        <meta name="twitter:image" content={siteConfig.ogImage} />
-      </head>
       <body>
         <NextIntlClientProvider>
           <Navbar />

@@ -2,17 +2,29 @@ import { getBlogPosts } from '@/utils/getBlogPosts'
 import { Navbar } from '@/components/navbar'
 import Image from 'next/image'
 import Link from 'next/link'
-import { generateMetadata } from '../../metadata'
+import { generateMetadata as baseGenerateMetadata } from '../../metadata'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = generateMetadata({
-  title: "Blog",
-  description: "Articles i recursos sobre bullying, mobbing i habilitats socials. Consells d'experts per superar l'assetjament escolar i laboral.",
-  path: "/blog"
-})
+const titles = {
+  ca: "Blog sobre bullying i mobbing | Consells i recursos útils",
+  es: "Blog sobre bullying y mobbing | Consejos y recursos útiles"
+};
+const descriptions = {
+  ca: "Descobreix articles, guies i testimonis per superar el bullying i el mobbing a Barcelona. Consells pràctics i experiències reals.",
+  es: "Descubre artículos, guías y testimonios para superar el bullying y el mobbing en Barcelona. Consejos prácticos y experiencias reales."
+};
 
-export default async function BlogPage() {
-  const posts = await getBlogPosts()
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const locale = params.locale === 'es' ? 'es' : 'ca';
+  return baseGenerateMetadata({
+    title: titles[locale],
+    description: descriptions[locale],
+    path: '/blog'
+  });
+}
+
+export default async function BlogPage({ params }: { params: { locale: string } }) {
+  const posts = await getBlogPosts(params.locale)
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,7 +41,7 @@ export default async function BlogPage() {
         <section className="py-12 md:py-20">
           <div className="container">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
+              {posts.map((post: any) => (
                 <article key={post.slug} className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div className="relative h-48">
                     <Image

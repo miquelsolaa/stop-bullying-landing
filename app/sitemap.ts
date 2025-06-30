@@ -19,22 +19,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' || route === '/es' ? 1 : 0.8,
   }))
 
-  // Get blog posts
-  const posts = await getBlogPosts()
-  const blogRoutes = posts.map((post) => [
-    {
+  // Get blog posts per idioma
+  const postsCa = await getBlogPosts('ca')
+  const postsEs = await getBlogPosts('es')
+  const blogRoutes = [
+    ...postsCa.map((post: any) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
-    },
-    {
+    })),
+    ...postsEs.map((post: any) => ({
       url: `${baseUrl}/es/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
-    }
-  ]).flat()
+    })),
+  ]
 
   return [...staticRoutes, ...blogRoutes]
 }

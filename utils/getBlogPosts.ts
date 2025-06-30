@@ -2,13 +2,14 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-export async function getBlogPosts() {
-  const postsDirectory = path.join(process.cwd(), 'content/blog')
+export async function getBlogPosts(locale: string = 'ca') {
+  if (!locale) locale = 'ca';
+  const postsDirectory = path.join(process.cwd(), 'content/blog', locale)
   const filenames = fs.readdirSync(postsDirectory)
 
   const posts = filenames
-    .filter(filename => filename.endsWith('.md'))
-    .map(filename => {
+    .filter((filename: string) => filename.endsWith('.md'))
+    .map((filename: string) => {
       const filePath = path.join(postsDirectory, filename)
       const fileContent = fs.readFileSync(filePath, 'utf8')
       const { data } = matter(fileContent)
@@ -18,7 +19,7 @@ export async function getBlogPosts() {
         slug: filename.replace('.md', ''),
       }
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return posts
 }

@@ -1,5 +1,6 @@
 ---
 title: "Assetjament laboral per part del cap: com detectar-lo i actuar"
+lang: "ca"
 date: 2025-04-15T15:00:00.000Z
 thumbnail: "https://www.bizneo.com/blog/wp-content/uploads/2019/10/acoso-laboral-810x455.jpg"
 description: El teu cap et fa sentir incòmode, t'humilia o t'aïlla? Podries estar patint assetjament laboral. Descobreix com identificar-lo i què pots fer per protegir-te.

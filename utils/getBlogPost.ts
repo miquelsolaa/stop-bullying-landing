@@ -5,8 +5,8 @@ import { remark } from 'remark'
 import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
 
-export async function getBlogPost(slug: string) {
-  const blogDir = path.join(process.cwd(), 'content/blog')
+export async function getBlogPost(slug: string, locale: string = 'ca') {
+  const blogDir = path.join(process.cwd(), 'content/blog', locale)
   
   // Decode the URL-encoded slug
   const decodedSlug = decodeURIComponent(slug)
@@ -29,7 +29,7 @@ export async function getBlogPost(slug: string) {
   
   const { data, content } = matter(fileContent)
   const processedContent = await remark()
-    .use(remarkGfm)  // Add this line
+    .use(remarkGfm)
     .use(html)
     .process(content)
   const contentHtml = processedContent.toString()
