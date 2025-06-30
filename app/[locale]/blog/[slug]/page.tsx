@@ -1,4 +1,5 @@
-import { Navbar } from '@/components/navbar'
+import { getBlogPost } from '@/utils/getBlogPost'
+import { getBlogPosts } from '@/utils/getBlogPosts'
 import { BlogLanguageSwitcher } from '@/components/blog-language-switcher'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,40 +9,32 @@ import type { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/blog/${params.locale}/${params.slug}`)
-    if (response.ok) {
-      const post = await response.json()
-      return generateSiteMetadata({
-        title: post.title,
-        description: post.description,
-        path: `/blog/${params.slug}`
-      })
-    }
+    const post = await getBlogPost(params.slug, params.locale)
+    return generateSiteMetadata({
+      title: post.title,
+      description: post.description,
+      path: `/blog/${params.slug}`
+    })
   } catch (error) {
     console.error('Error generating metadata:', error)
+    return generateSiteMetadata({
+      title: 'Blog Post',
+      description: 'Blog post',
+      path: `/blog/${params.slug}`
+    })
   }
-  
-  return generateSiteMetadata({
-    title: 'Blog Post',
-    description: 'Blog post',
-    path: `/blog/${params.slug}`
-  })
 }
 
 export async function generateStaticParams({ params }: { params: { locale: string } }) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/blog/${params.locale}`)
-    if (response.ok) {
-      const posts = await response.json()
-      return posts.map((post: any) => ({
-        slug: post.slug,
-      }))
-    }
+    const posts = await getBlogPosts(params.locale)
+    return posts.map((post: any) => ({
+      slug: post.slug,
+    }))
   } catch (error) {
     console.error('Error generating static params:', error)
+    return []
   }
-  
-  return []
 }
 
 export default async function BlogPostPage({
@@ -50,17 +43,10 @@ export default async function BlogPostPage({
   params: { slug: string, locale: string }
 }) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/blog/${params.locale}/${params.slug}`)
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch blog post: ${response.statusText}`)
-    }
-    
-    const post = await response.json()
+    const post = await getBlogPost(params.slug, params.locale)
 
     return (
       <div className="flex flex-col min-h-screen">
-        <Navbar />
         <main className="flex-1">
           <article>
             <div className="relative h-[500px] w-full bg-gradient-to-b from-gray-900/90 to-gray-900/90">
