@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run copy-blog && next build",
+    "copy-blog": "node scripts/copy-blog.js",
     "start": "next start",
     "lint": "next lint"
   },
@@ -62,7 +63,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.10.7",
-    "@types/node": "^22.13.8",
+    "@types/node": "^22.15.34",
     "@types/react": "18.3.18",
     "@types/react-dom": "^18",
     "netlify-plugin-cache": "^1.0.3",

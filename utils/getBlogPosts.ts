@@ -6,8 +6,8 @@ export async function getBlogPosts(locale: string = 'ca') {
   try {
     if (!locale) locale = 'ca';
     
-    // Try public first (for production), then fallback to content (for development)
-    let postsDirectory = path.join(process.cwd(), 'public/content/blog', locale)
+    // Try public/blog first (for production), then fallback to content (for development)
+    let postsDirectory = path.join(process.cwd(), 'public/blog', locale)
     
     if (!fs.existsSync(postsDirectory)) {
       postsDirectory = path.join(process.cwd(), 'content/blog', locale)

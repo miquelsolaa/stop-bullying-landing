@@ -1,6 +1,6 @@
 import { getBlogPost } from '@/utils/getBlogPost'
 import { getBlogPosts } from '@/utils/getBlogPosts'
-import { Navbar } from '@/components/navbar'
+import { BlogLanguageSwitcher } from '@/components/blog-language-switcher'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
@@ -55,13 +55,16 @@ export default async function BlogPostPage({
           </div>
 
           <div className="container max-w-3xl py-12">
-            <Link 
-              href={`/${params.locale}/blog`}
-              className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              {params.locale === 'es' ? 'Volver al blog' : 'Tornar al blog'}
-            </Link>
+            <div className="flex justify-between items-center mb-8">
+              <Link 
+                href={`/${params.locale}/blog`}
+                className="inline-flex items-center text-gray-600 hover:text-gray-900"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                {params.locale === 'es' ? 'Volver al blog' : 'Tornar al blog'}
+              </Link>
+              <BlogLanguageSwitcher />
+            </div>
 
             <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-img:rounded-xl">
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
