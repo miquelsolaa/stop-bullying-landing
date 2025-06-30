@@ -5,7 +5,7 @@ console.log('Copying blog files...');
 
 try {
   const sourceDir = path.join(process.cwd(), 'content', 'blog');
-  const targetDir = path.join(process.cwd(), 'public', 'blog');
+  const targetDir = path.join(process.cwd(), '.next', 'blog');
   
   // Create target directory if it doesn't exist
   if (!fs.existsSync(targetDir)) {
@@ -26,7 +26,7 @@ try {
       const sourceFile = path.join(caSource, file);
       const targetFile = path.join(caTarget, file);
       fs.copyFileSync(sourceFile, targetFile);
-      console.log(`Copied: ${file} to public/blog/ca/`);
+      console.log(`Copied: ${file} to .next/blog/ca/`);
     });
   }
   
@@ -44,7 +44,7 @@ try {
       const sourceFile = path.join(esSource, file);
       const targetFile = path.join(esTarget, file);
       fs.copyFileSync(sourceFile, targetFile);
-      console.log(`Copied: ${file} to public/blog/es/`);
+      console.log(`Copied: ${file} to .next/blog/es/`);
     });
   }
   

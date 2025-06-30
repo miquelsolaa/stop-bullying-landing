@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run copy-blog && next build",
-    "copy-blog": "cp -r content/blog .next/",
+    "copy-blog": "node scripts/copy-blog.js",
     "start": "next start",
     "lint": "next lint"
   },
