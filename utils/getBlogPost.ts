@@ -7,8 +7,8 @@ import remarkGfm from 'remark-gfm'
 
 export async function getBlogPost(slug: string, locale: string = 'ca') {
   try {
-    // Use only the content/blog directory which is more reliable
-    const blogDir = path.join(process.cwd(), 'content/blog', locale)
+    // Use public/blog which is more reliable on Netlify
+    const blogDir = path.join(process.cwd(), 'public/blog', locale)
     
     if (!fs.existsSync(blogDir)) {
       throw new Error(`Blog directory for locale ${locale} not found`)

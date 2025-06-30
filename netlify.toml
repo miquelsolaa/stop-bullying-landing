@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # Next.js plugin
 [[plugins]]
@@ -18,18 +19,22 @@
         "node_modules/.cache"   # Node modules cache
       ]
 
-# Ensure blog files are available
+# Handle static files
 [[redirects]]
   from = "/blog/*"
-  to = "/.next/server/pages/blog/:splat"
+  to = "/.next/static/blog/:splat"
   status = 200
+  force = true
 
-# Ensure content/blog is copied to the build
-[[edge_functions]]
-  function = "content"
-  path = "/content/*"
-
+# Handle API routes
 [[redirects]]
-  from = "/content/*"
-  to = "/.next/server/pages/content/:splat"
+  from = "/api/*"
+  to = "/.next/server/app/api/:splat"
   status = 200
+  force = true
+
+# Handle 404 errors
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
