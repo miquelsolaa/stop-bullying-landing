@@ -39,6 +39,9 @@ const nextConfig = {
       })
     }
     return config
+  },
+  experimental: {
+    outputFileTracingRoot: process.cwd(),
   }
 }
 
