@@ -268,20 +268,28 @@ export default function LandingPage() {
           <div className="container text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold">¡Reserva tu sesión hoy mismo!</h2>
             <p className="text-xl max-w-2xl mx-auto">
-              No esperes más para mejorar tus habilidades sociales y superar el bullying o mobbing. El cambio comienza con un
-              primer paso.
+            No esperes más para mejorar tus habilidades sociales y superar el bullying o mobbing. El cambio comienza con un
+            primer paso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/es/contacto">
-              <Button size="lg" className="bg-white text-rose-500 hover:bg-gray-100 text-lg">
+            <Link href="/contacte">
+              <Button 
+                size="lg" 
+                className="button-primary text-lg"
+                aria-label="Reserva una consulta ara"
+              >
                 Reserva una consulta
               </Button>
-              </Link>
-              <Link href="/es/contacto">
-              <Button size="lg" className="border-white text-white hover:bg-white/10 text-lg">
+            </Link>
+            <Link href="/contacte">
+              <Button 
+                size="lg" 
+                className="button-secondary text-lg font-semibold"
+                aria-label="Obtén más información sobre nuestros servicios"
+              >
                 Más información
               </Button>
-              </Link>
+            </Link>
             </div>
           </div>
         </section>
