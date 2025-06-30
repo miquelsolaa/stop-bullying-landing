@@ -26,7 +26,7 @@ export const siteConfig = {
     'tractament mobbing Barcelona',
     'Terrassa',
     'Barcelona',
-  ],
+  ] as string[],
 } as const
 
 export const defaultMetadata: Metadata = {
@@ -36,7 +36,7 @@ export const defaultMetadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: siteConfig.keywords,
+  keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,

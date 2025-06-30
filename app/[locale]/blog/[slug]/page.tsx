@@ -4,7 +4,7 @@ import { Navbar } from '@/components/navbar'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { generateMetadata as generateSiteMetadata } from '../../metadata'
+import { generateMetadata as generateSiteMetadata } from '../../../metadata'
 import type { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -33,7 +33,6 @@ export default async function BlogPostPage({
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <main className="flex-1">
         <article>
           <div className="relative h-[500px] w-full bg-gradient-to-b from-gray-900/90 to-gray-900/90">

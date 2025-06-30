@@ -1,0 +1,153 @@
+{
+  "hola": "¡Hola mundo!",
+  "benvingut": "¡Bienvenido a nuestra web!",
+  "hero": {
+    "title": "Supera el bullying o mobbing y mejora tus habilidades sociales para mejorar tu bienestar",
+    "subtitle": "Desarrolla habilidades de comunicación y gestión emocional para afrontar situaciones difíciles",
+    "cta": "Reserva una consulta"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "text": "En Stop Bullying o Mobbing, nos dedicamos a ayudar a niños y adultos a desarrollar habilidades sociales para afrontar el bullying o mobbing y los retos interpersonales. Nuestra coach, con más de 10 años de experiencia, ha ayudado a cientos de personas a superar situaciones difíciles y a construir relaciones saludables."
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "about": "Sobre Nosotros",
+    "benefits": "Beneficios",
+    "testimonials": "Testimonios",
+    "howItWorks": "Cómo Funciona",
+    "contactUs": "Contáctanos",
+    "openMenu": "Abrir menú de navegación"
+  },
+  "benefits": {
+    "title": "Nuestros Beneficios",
+    "list": [
+      {
+        "title": "Mejora tu confianza y comunicación",
+        "desc": "Aprende a expresarte con seguridad y claridad en cualquier situación social, construyendo una autoestima sólida."
+      },
+      {
+        "title": "Aprende a afrontar situaciones difíciles",
+        "desc": "Desarrolla estrategias efectivas para gestionar conflictos y responder adecuadamente ante el bullying o mobbing."
+      },
+      {
+        "title": "Resultados efectivos en pocos pasos",
+        "desc": "Nuestro método probado proporciona herramientas prácticas que puedes aplicar inmediatamente para ver cambios reales."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "list": [
+      {
+        "text": "Mi hijo ha experimentado un cambio increíble después de solo 6 sesiones. Ahora tiene las herramientas para afrontar situaciones difíciles en la escuela y su confianza ha aumentado enormemente.",
+        "name": "Maria G.",
+        "role": "Madre de un niño de 10 años",
+        "image": "/maria.jpg"
+      },
+      {
+        "text": "Como adulto que ha sufrido mobbing en el trabajo, este programa me ha dado la confianza y las habilidades para establecer límites saludables y comunicarme asertivamente. Ha cambiado mi vida profesional.",
+        "name": "Jordi P.",
+        "role": "Profesional de 35 años",
+        "image": "/jordi.jpg"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "steps": [
+      {
+        "title": "1. Reserva",
+        "desc": "Programa una consulta para evaluar tus necesidades específicas."
+      },
+      {
+        "title": "2. Evaluación",
+        "desc": "Creamos un plan personalizado basado en tu situación y objetivos."
+      },
+      {
+        "title": "3. Sesiones",
+        "desc": "Participa en 6-8 sesiones prácticas para desarrollar nuevas habilidades."
+      },
+      {
+        "title": "4. Resultados",
+        "desc": "Aplica las nuevas habilidades en la vida real y observa los cambios positivos."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¡Reserva tu sesión hoy mismo!",
+    "desc": "No esperes más para mejorar tus habilidades sociales y superar el bullying o mobbing. El cambio comienza con un primer paso.",
+    "primary": "Reserva una consulta",
+    "secondary": "Más información"
+  },
+  "contact": {
+    "title": "Ponte en contacto con nosotros",
+    "subtitle": "Reserva tu primera sesión o haznos cualquier consulta. ¡Estamos aquí para ayudarte!",
+    "formTitle": "Envíanos un mensaje",
+    "formSubtitle": "Rellena el formulario y nos pondremos en contacto contigo lo antes posible.",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Tu correo electrónico",
+    "phone": "Teléfono",
+    "phonePlaceholder": "Tu número de teléfono",
+    "message": "Mensaje",
+    "messagePlaceholder": "Explícanos cómo podemos ayudarte",
+    "sending": "Enviando...",
+    "submit": "Envía tu solicitud",
+    "success": "¡Gracias por tu mensaje! Te contactaremos pronto.",
+    "error": "Ha habido un error. Por favor, inténtalo de nuevo más tarde.",
+    "contactInfo": "Información de contacto",
+    "emailLabel": "Correo electrónico",
+    "phoneLabel": "Teléfono",
+    "ctaTitle": "Da el primer paso hacia una comunicación más efectiva",
+    "ctaSubtitle": "Contáctanos hoy mismo y comienza tu camino hacia relaciones más saludables y una mejor autoestima.",
+    "ctaButton": "Reserva una consulta"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "list": [
+      {
+        "question": "¿Cómo sé si estoy sufriendo bullying o mobbing?",
+        "answer": "Muchas personas tienen dudas. En la primera sesión analizaremos tu situación con calma y confidencialidad para ver si se trata de acoso y cómo podemos ayudarte."
+      },
+      {
+        "question": "¿Trabajáis con niños, adolescentes y adultos?",
+        "answer": "Sí. Ofrecemos apoyo tanto a menores como a adultos. Tratamos casos de acoso escolar (bullying) y laboral (mobbing), adaptando las sesiones a cada edad y contexto."
+      },
+      {
+        "question": "¿Qué mejoras puedo esperar con las sesiones?",
+        "answer": "Muchas personas empiezan a sentir alivio y claridad desde las primeras sesiones. Trabajamos habilidades sociales, gestión emocional y estrategias prácticas para afrontar la situación."
+      },
+      {
+        "question": "¿Las sesiones son presenciales u online?",
+        "answer": "Puedes elegir el formato que te vaya mejor. Ofrecemos sesiones presenciales en Terrassa y también sesiones online, con la misma calidad y compromiso."
+      },
+      {
+        "question": "¿Qué duración y frecuencia tienen las sesiones?",
+        "answer": "Cada sesión dura una hora. La frecuencia ideal suele ser semanal, pero nos adaptamos según la disponibilidad y el ritmo de cada persona."
+      }
+    ]
+  },
+  "footer": {
+    "brand": "Stop Bullying",
+    "desc": "Servicio de coaching de comunicación en Terrassa, especializado en ayudar a niños y adultos a superar el bullying, el mobbing y a desarrollar habilidades sociales para mejorar sus relaciones personales y laborales.",
+    "contact": "Contacto",
+    "location": "Terrassa, Barcelona",
+    "email": "contacte@stopbullyingmobbing.com",
+    "phone": "+34 646 35 78 01",
+    "follow": "Síguenos",
+    "facebook": "Facebook",
+    "copyright": "Todos los derechos reservados.",
+    "powered": "Powered by",
+    "developer": "CodiXperts"
+  }
+} 

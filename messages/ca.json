@@ -1,0 +1,153 @@
+{
+    "hola": "Hola món!",
+    "benvingut": "Benvingut a la nostra web!",
+    "hero": {
+      "title": "Supera el bullying o mobbing i millora les teves habilitats socials per millorar el teu benestar",
+      "subtitle": "Desenvolupa habilitats de comunicació i gestió emocional per afrontar situacions difícils",
+      "cta": "Reserva una consulta"
+    },
+    "about": {
+      "title": "Sobre Nosaltres",
+      "text": "A Stop Bullying o Mobbing, ens dediquem a ajudar nens i adults a desenvolupar habilitats socials per afrontar el bullying o mobbing i els reptes interpersonals. La nostra coach, amb més de 10 anys d'experiència, ha ajudat a centenars de persones a superar situacions difícoles i a construir relacions saludables."
+    },
+    "navigation": {
+      "home": "Inici",
+      "about": "Sobre nosaltres",
+      "services": "Serveis",
+      "blog": "Blog",
+      "contact": "Contacte"
+    },
+    "navbar": {
+      "home": "Inici",
+      "blog": "Blog",
+      "about": "Sobre Nosaltres",
+      "benefits": "Beneficis",
+      "testimonials": "Testimonis",
+      "howItWorks": "Com Funciona",
+      "contactUs": "Contacta'ns",
+      "openMenu": "Obrir menú de navegació"
+    },
+    "contact": {
+      "title": "Posa't en contacte amb nosaltres",
+      "subtitle": "Reserva la teva primera sessió o fes-nos qualsevol consulta. Estem aquí per ajudar-te!",
+      "formTitle": "Envia'ns un missatge",
+      "formSubtitle": "Omple el formulari i ens posarem en contacte amb tu el més aviat possible.",
+      "name": "Nom",
+      "namePlaceholder": "El teu nom complet",
+      "email": "Correu electrònic",
+      "emailPlaceholder": "El teu correu electrònic",
+      "phone": "Telèfon",
+      "phonePlaceholder": "El teu número de telèfon",
+      "message": "Missatge",
+      "messagePlaceholder": "Explica'ns com podem ajudar-te",
+      "sending": "Enviant...",
+      "submit": "Envia la teva sol·licitud",
+      "success": "Gràcies pel teu missatge! Et contactarem aviat.",
+      "error": "Hi ha hagut un error. Si us plau, torna-ho a provar més tard.",
+      "contactInfo": "Informació de contacte",
+      "emailLabel": "Correu electrònic",
+      "phoneLabel": "Telèfon",
+      "ctaTitle": "Fes el primer pas cap a una comunicació més efectiva",
+      "ctaSubtitle": "Contacta'ns avui mateix i comença el teu camí cap a relacions més saludables i una millor autoestima.",
+      "ctaButton": "Reserva una consulta"
+    },
+    "benefits": {
+      "title": "Els Nostres Beneficis",
+      "list": [
+        {
+          "title": "Millora la teva confiança i comunicació",
+          "desc": "Aprèn a expressar-te amb seguretat i claredat en qualsevol situació social, construint una autoestima sòlida."
+        },
+        {
+          "title": "Aprèn a afrontar situacions difícils",
+          "desc": "Desenvolupa estratègies efectives per gestionar conflictes i respondre adequadament davant del bullying o mobbing."
+        },
+        {
+          "title": "Resultats efectius en pocs passos",
+          "desc": "El nostre mètode provat proporciona eines pràctiques que pots aplicar immediatament per veure canvis reals."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "El Que Diuen Els Nostres Clients",
+      "list": [
+        {
+          "text": "El meu fill ha experimentat un canvi increïble després de només 6 sessions. Ara té les eines per afrontar situacions difícils a l'escola i la seva confiança ha augmentat enormement.",
+          "name": "Maria G.",
+          "role": "Mare d'un nen de 10 anys",
+          "image": "/maria.jpg"
+        },
+        {
+          "text": "Com a adult que ha patit mobbing a la feina, aquest programa m'ha donat la confiança i les habilitats per establir límits saludables i comunicar-me assertivament. Ha canviat la meva vida professional.",
+          "name": "Jordi P.",
+          "role": "Professional de 35 anys",
+          "image": "/jordi.jpg"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Com Funciona",
+      "steps": [
+        {
+          "title": "1. Reserva",
+          "desc": "Programa una consulta per avaluar les teves necessitats específiques."
+        },
+        {
+          "title": "2. Avaluació",
+          "desc": "Creem un pla personalitzat basat en la teva situació i objectius."
+        },
+        {
+          "title": "3. Sessions",
+          "desc": "Participa en 6-8 sessions pràctiques per desenvolupar noves habilitats."
+        },
+        {
+          "title": "4. Resultats",
+          "desc": "Aplica les noves habilitats a la vida real i veu els canvis positius."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Reserva la teva sessió avui mateix!",
+      "desc": "No esperis més per millorar les teves habilitats socials i superar el bullying o mobbing. El canvi comença amb un primer pas.",
+      "primary": "Reserva una consulta",
+      "secondary": "Més informació"
+    },
+    "faq": {
+      "title": "Preguntes Freqüents",
+      "list": [
+        {
+          "question": "Com sé si estic patint bullying o mobbing?",
+          "answer": "Moltes persones tenen dubtes. A la primera sessió analitzarem la teva situació amb calma i confidencialitat per veure si es tracta d'assetjament i com et podem ayudar."
+        },
+        {
+          "question": "Treballeu amb nens, adolescents i adults?",
+          "answer": "Sí. Oferim suport tant a menors com a adults. Tractem casos d'assetjament escolar (bullying) i laboral (mobbing), adaptant les sessions a cada edat i context."
+        },
+        {
+          "question": "Quines millores puc esperar amb les sessions?",
+          "answer": "Moltes persones comencen a sentir alleujament i claredat des de les primeres sessions. Treballem habilitats socials, gestió emocional i estratègies pràctiques per afrontar la situació."
+        },
+        {
+          "question": "Les sessions són presencials o online?",
+          "answer": "Pots triar el format que et vagi millor. Oferim sessions presencials a Terrassa i també sessions online, amb la mateixa qualitat i compromís."
+        },
+        {
+          "question": "Quina durada i freqüència tenen les sessions?",
+          "answer": "Cada sessió dura una hora. La freqüència ideal sol ser setmanal, però ens adaptem segons la disponibilitat i el ritme de cada persona."
+        }
+      ]
+    },
+    "footer": {
+      "brand": "Stop Bullying",
+      "desc": "Servei de coaching de comunicació a Terrassa, especialitzat en ajudar nens i adults a superar el bullying, el mobbing i a desenvolupar habilitats socials per millorar les seves relacions personals i laborals.",
+      "contact": "Contacte",
+      "location": "Terrassa, Barcelona",
+      "email": "contacte@stopbullyingmobbing.com",
+      "phone": "+34 646 35 78 01",
+      "follow": "Segueix-nos",
+      "facebook": "Facebook",
+      "copyright": "Tots els drets reservats.",
+      "powered": "Powered by",
+      "developer": "CodiXperts"
+    }
+  }

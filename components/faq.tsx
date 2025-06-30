@@ -1,37 +1,17 @@
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-
-const faqs = [
-    {
-      question: "Com sé si estic patint bullying o mobbing?",
-      answer: "Moltes persones tenen dubtes. A la primera sessió analitzarem la teva situació amb calma i confidencialitat per veure si es tracta d'assetjament i com et podem ajudar."
-    },
-    {
-      question: "Treballeu amb nens, adolescents i adults?",
-      answer: "Sí. Oferim suport tant a menors com a adults. Tractem casos d'assetjament escolar (bullying) i laboral (mobbing), adaptant les sessions a cada edat i context."
-    },
-    {
-      question: "Quines millores puc esperar amb les sessions?",
-      answer: "Moltes persones comencen a sentir alleujament i claredat des de les primeres sessions. Treballem habilitats socials, gestió emocional i estratègies pràctiques per afrontar la situació."
-    },
-    {
-      question: "Les sessions són presencials o online?",
-      answer: "Pots triar el format que et vagi millor. Oferim sessions presencials a Terrassa i també sessions online, amb la mateixa qualitat i compromís."
-    },
-    {
-      question: "Quina durada i freqüència tenen les sessions?",
-      answer: "Cada sessió dura una hora. La freqüència ideal sol ser setmanal, però ens adaptem segons la disponibilitat i el ritme de cada persona."
-    }
-  ];  
+import { useTranslations } from 'next-intl'
 
 export function FAQ() {
   const [openItems, setOpenItems] = useState<number[]>([])
+  const t = useTranslations('faq')
+  const faqs = t.raw('list') as { question: string; answer: string }[]
 
   const toggleItem = (index: number) => {
-    setOpenItems(current => 
+    setOpenItems((current: number[]) =>
       current.includes(index)
-        ? current.filter(i => i !== index)
+        ? current.filter((i: number) => i !== index)
         : [...current, index]
     )
   }
@@ -40,7 +20,7 @@ export function FAQ() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Preguntes Freqüents</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t('title')}</h2>
           <div className="h-1 w-20 bg-rose-500 mx-auto mt-4"></div>
         </div>
 

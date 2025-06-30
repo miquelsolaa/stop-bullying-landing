@@ -8,23 +8,27 @@ export function LanguageSwitcher() {
   const router = useRouter()
 
   const switchLanguage = () => {
-    const isSpanish = pathname.startsWith("/es")
-    const basePath = isSpanish ? pathname.replace("/es", "") : pathname
-    const newPathname = isSpanish 
-      ? basePath.replace("/contacto", "/contacte")
-      : `/es${basePath.replace("/contacte", "/contacto")}`
-
-    // If switching to Catalan and we're at the root Spanish page
-    if (isSpanish && basePath === "") {
-      router.push("/")
-    } else {
-      router.push(newPathname)
-    }
+    // Extract locale and path from current URL
+    const pathSegments = pathname.split('/')
+    const currentLocale = pathSegments[1] // 'ca' or 'es'
+    const remainingPath = pathSegments.slice(2).join('/') // rest of the path
+    
+    // Determine new locale
+    const newLocale = currentLocale === 'ca' ? 'es' : 'ca'
+    
+    // Build new path
+    const newPath = `/${newLocale}${remainingPath ? `/${remainingPath}` : ''}`
+    
+    router.push(newPath)
   }
+
+  // Determine current locale and display text
+  const currentLocale = pathname.startsWith("/es") ? "es" : "ca"
+  const displayText = currentLocale === "es" ? "CAT" : "ESP"
 
   return (
     <Button onClick={switchLanguage} variant="outline" size="sm">
-      {pathname.startsWith("/es") ? "CAT" : "ESP"}
+      {displayText}
     </Button>
   )
 }
