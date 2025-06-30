@@ -74,6 +74,7 @@ export default function LandingClient() {
                   quality={85}
                   placeholder="blur"
                   blurDataURL={image.blurDataURL}
+                  unoptimized
                   className={`object-cover transition-opacity duration-500 ${
                     currentImage === index ? "opacity-100" : "opacity-0"
                   }`}
@@ -149,6 +150,7 @@ export default function LandingClient() {
                           alt="Testimoni"
                           fill
                           className="object-cover"
+                          unoptimized
                         />
                       </div>
                       <div>

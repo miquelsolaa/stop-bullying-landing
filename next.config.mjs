@@ -44,7 +44,7 @@ const nextConfig = {
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 any
-    unoptimized: false,
+    unoptimized: true, // Permet imatges sense optimitzar de la carpeta public
     loader: 'default',
   },
   // Configuració de cache per a fitxers estàtics
