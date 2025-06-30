@@ -5,18 +5,15 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Copy blog files to the build output
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[redirects]]
-  from = "/content/*"
-  to = "/.next/server/pages/content/:splat"
-  status = 200
-
-# Ensure content/blog is copied to the build
-[[edge_functions]]
-  function = "content"
-  path = "/content/*"
+# Ensure blog files are copied
+[[plugins]]
+  package = "netlify-plugin-copy"
+    [plugins.inputs]
+      sources = ["content/blog"]
 
 # Cache configuration
 [[plugins]]
@@ -31,4 +28,14 @@
 [[redirects]]
   from = "/blog/*"
   to = "/.next/server/pages/blog/:splat"
+  status = 200
+
+# Ensure content/blog is copied to the build
+[[edge_functions]]
+  function = "content"
+  path = "/content/*"
+
+[[redirects]]
+  from = "/content/*"
+  to = "/.next/server/pages/content/:splat"
   status = 200

@@ -7,10 +7,21 @@ import remarkGfm from 'remark-gfm'
 
 export async function getBlogPost(slug: string, locale: string = 'ca') {
   try {
-    // Use only the content/blog directory which is more reliable
-    const blogDir = path.join(process.cwd(), 'content/blog', locale)
+    // Try multiple possible locations for the blog files
+    const possiblePaths = [
+      path.join(process.cwd(), '.next', 'blog', locale),
+      path.join(process.cwd(), 'content/blog', locale)
+    ]
     
-    if (!fs.existsSync(blogDir)) {
+    let blogDir = null
+    for (const possiblePath of possiblePaths) {
+      if (fs.existsSync(possiblePath)) {
+        blogDir = possiblePath
+        break
+      }
+    }
+    
+    if (!blogDir) {
       throw new Error(`Blog directory for locale ${locale} not found`)
     }
     
