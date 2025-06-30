@@ -5,15 +5,9 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Copy blog files to the build output
+# Next.js plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Ensure blog files are copied
-[[plugins]]
-  package = "netlify-plugin-copy"
-    [plugins.inputs]
-      sources = ["content/blog"]
 
 # Cache configuration
 [[plugins]]
