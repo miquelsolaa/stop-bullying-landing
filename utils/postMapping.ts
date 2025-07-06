@@ -77,6 +77,10 @@ export const postMapping: Record<string, { ca: string; es: string }> = {
   'ejemplos-bullying': {
     ca: 'exemples-bullying-10-situacions-reals-com-enfrontar-les',
     es: 'ejemplos-de-bullying'
+  },
+  'ejemplos-bullying-consecuencias': {
+    ca: 'exemples-de-bullying-i-assetjament-laboral-consequencies',
+    es: 'ejemplos-de-bullying-y-mobbing-consecuencias'
   }
 };
 
