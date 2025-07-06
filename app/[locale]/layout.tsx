@@ -7,14 +7,18 @@ import { generateMetadata, siteConfig } from '../metadata';
 
 function getAlternateLinks(locale: string, path: string) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url;
-  return routing.locales.map((loc) => (
-    <link
-      key={loc}
-      rel="alternate"
-      href={`${baseUrl}/${loc}${path ? `/${path}` : ''}`}
-      hrefLang={loc}
-    />
-  ));
+  return routing.locales.map((loc) => {
+    // No afegir prefix per al locale per defecte (ca)
+    const localePrefix = loc === routing.defaultLocale ? '' : `/${loc}`;
+    return (
+      <link
+        key={loc}
+        rel="alternate"
+        href={`${baseUrl}${localePrefix}${path ? `/${path}` : ''}`}
+        hrefLang={loc}
+      />
+    );
+  });
 }
 
 export const metadata = generateMetadata({

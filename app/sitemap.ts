@@ -4,14 +4,15 @@ import { getBlogPosts } from '@/utils/getBlogPosts'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://stopbullyingmobbing.com'
 
-  // Static routes
+  // Static routes amb localePrefix: 'as-needed' 
+  // El català (locale per defecte) no té prefix, l'espanyol sí
   const staticRoutes = [
-    '',
-    '/contacte',
-    '/blog',
-    '/es',
-    '/es/blog',
-    '/es/contacto',
+    '', // pàgina principal (català per defecte)
+    '/contacte', // contacte català (sense prefix)
+    '/blog', // blog català (sense prefix)
+    '/es', // pàgina principal espanyol
+    '/es/blog', // blog espanyol
+    '/es/contacte', // contacte espanyol
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -23,12 +24,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postsCa = await getBlogPosts('ca')
   const postsEs = await getBlogPosts('es')
   const blogRoutes = [
+    // Posts en català sense prefix (locale per defecte)
     ...postsCa.map((post: any) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
+    // Posts en espanyol amb prefix /es
     ...postsEs.map((post: any) => ({
       url: `${baseUrl}/es/blog/${post.slug}`,
       lastModified: new Date(post.date),

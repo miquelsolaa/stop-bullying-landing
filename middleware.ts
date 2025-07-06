@@ -1,7 +1,11 @@
 import createMiddleware from 'next-intl/middleware';
 import {routing} from './i18n/routing';
 
-export default createMiddleware(routing);
+export default createMiddleware({
+  ...routing,
+  // Desactivar la detecció automàtica d'idioma
+  localeDetection: false
+});
 
 export const config = {
   // Match all pathnames except for
