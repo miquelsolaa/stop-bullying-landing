@@ -81,6 +81,14 @@ export const postMapping: Record<string, { ca: string; es: string }> = {
   'ejemplos-bullying-consecuencias': {
     ca: 'exemples-de-bullying-i-assetjament-laboral-consequencies',
     es: 'ejemplos-de-bullying-y-mobbing-consecuencias'
+  },
+  'bullying-mas-peligroso': {
+    ca: 'quin-es-el-bullying-mes-perillos-quan-per-que',
+    es: 'cual-es-el-bullying-mas-peligroso-cuando-por-que'
+  },
+  'por-que-hacen-bullying': {
+    ca: 'per-que-fan-bullying',
+    es: 'por-que-hacen-bullying'
   }
 };
 
