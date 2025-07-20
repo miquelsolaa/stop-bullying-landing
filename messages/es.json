@@ -48,17 +48,31 @@
     "title": "Lo Que Dicen Nuestros Clientes",
     "list": [
       {
-        "text": "Mi hijo ha experimentado un cambio increíble después de solo 6 sesiones. Ahora tiene las herramientas para afrontar situaciones difíciles en la escuela y su confianza ha aumentado enormemente.",
-        "name": "Maria G.",
+        "text": "Mi hijo llevaba meses sintiéndose inseguro y sin ganas de ir al colegio. En la consulta lo trataron con una sensibilidad increíble. Le ayudaron a entender lo que le estaba pasando y le ofrecieron herramientas que hoy utiliza con confianza. Ha recuperado su sonrisa y eso no tiene precio.",
+        "name": "María G.",
         "role": "Madre de un niño de 10 años",
         "image": "/maria.jpg"
       },
       {
-        "text": "Como adulto que ha sufrido mobbing en el trabajo, este programa me ha dado la confianza y las habilidades para establecer límites saludables y comunicarme asertivamente. Ha cambiado mi vida profesional.",
+        "text": "Sufrí mobbing durante años sin poder ponerle nombre. La atención que recibí me permitió ver las cosas con claridad, recuperar mi autoestima y aprender a poner límites sin sentir culpa. Sentí un acompañamiento real, respetuoso y cercano. Gracias a ello, he podido recuperar mi dignidad en el trabajo.",
         "name": "Jordi P.",
         "role": "Profesional de 35 años",
         "image": "/jordi.jpg"
+      },
+      {
+        "text": "Cuando mi hija empezó a cerrarse en sí misma y a no querer ir al instituto, me sentía completamente perdida. En la consulta nos escucharon sin prisas, con mucha empatía. Nos ofrecieron orientación clara y herramientas que marcaron un antes y un después. Ahora ella se siente más fuerte y ya no está sola.",
+        "name": "Claudia R.",
+        "role": "Madre de una adolescente de 14 años",
+        "image": "/claudia.jpeg"
+      },
+      {
+        "text": "Durante mucho tiempo normalicé situaciones abusivas en el trabajo. No sabía cómo poner límites ni cómo pedir ayuda. En este espacio de atención me sentí escuchado por primera vez. Me ayudaron a entender lo que estaba pasando y cómo protegerme emocionalmente. Lo recomiendo a cualquiera que esté atravesando algo así.",
+        "name": "Albert M.",
+        "role": "Funcionario de 42 años",
+        "image": "/albert.jpeg"
       }
+      
+      
     ]
   },
   "howItWorks": {

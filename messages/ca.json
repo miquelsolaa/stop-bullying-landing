@@ -72,17 +72,29 @@
       "title": "El Que Diuen Els Nostres Clients",
       "list": [
         {
-          "text": "El meu fill ha experimentat un canvi increïble després de només 6 sessions. Ara té les eines per afrontar situacions difícils a l'escola i la seva confiança ha augmentat enormement.",
+          "text": "El meu fill feia mesos que se sentia insegur i sense ganes d’anar a l’escola. A la consulta el van tractar amb una sensibilitat increïble. El van ajudar a entendre què li estava passant i li van oferir eines que ara fa servir amb confiança. Ha recuperat el somriure, i això no té preu.",
           "name": "Maria G.",
-          "role": "Mare d'un nen de 10 anys",
+          "role": "Mare d’un nen de 10 anys",
           "image": "/maria.jpg"
         },
         {
-          "text": "Com a adult que ha patit mobbing a la feina, aquest programa m'ha donat la confiança i les habilitats per establir límits saludables i comunicar-me assertivament. Ha canviat la meva vida professional.",
+          "text": "Vaig patir mobbing durant anys sense saber com posar-hi nom. L’atenció que vaig rebre em va permetre veure les coses amb claredat, recuperar l’autoestima i aprendre a posar límits sense sentir-me culpable. Vaig sentir un acompanyament real, respectuós i proper. Gràcies a això, he pogut recuperar la meva dignitat a la feina.",
           "name": "Jordi P.",
           "role": "Professional de 35 anys",
           "image": "/jordi.jpg"
-        }
+        },
+        {
+          "text": "Quan la meva filla va començar a tancar-se en ella mateixa i a no voler anar a l’institut, em vaig sentir completament perduda. A la consulta ens van escoltar sense pressa, amb molta empatia. Ens van donar orientació clara i eines que han marcat un abans i un després. Ara ella se sent més forta i no està sola.",
+          "name": "Clàudia R.",
+          "role": "Mare d'una adolescent de 14 anys",
+          "image": "/claudia.jpeg"
+        },
+        {
+          "text": "Durant molt de temps vaig normalitzar situacions abusives a la feina. No sabia com posar límits ni com demanar ajuda. A l’espai d’atenció vaig sentir-me escoltat per primera vegada. Em van ajudar a entendre què estava passant i com protegir-me emocionalment. Ho recomano a qualsevol que estigui passant per això.",
+          "name": "Albert M.",
+          "role": "Funcionari de 42 anys",
+          "image": "/albert.jpeg"
+        }        
       ]
     },
     "howItWorks": {

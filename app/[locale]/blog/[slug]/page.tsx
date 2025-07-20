@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { generateMetadata as generateSiteMetadata } from '../../../metadata'
 import type { Metadata } from 'next'
+import { TableOfContents } from '@/components/shared/TableOfContents'
 
 // Forçar render dinàmic per evitar problemes amb SSG
 export const dynamic = 'force-dynamic'
@@ -78,38 +79,49 @@ export default async function BlogPostPage({
               </div>
             </div>
 
-            <div className="container max-w-3xl py-12">
-              <div className="flex justify-between items-center mb-8">
-                <Link 
-                  href={`/${params.locale}/blog`}
-                  className="inline-flex items-center text-gray-600 hover:text-gray-900"
-                >
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  {params.locale === 'es' ? 'Volver al blog' : 'Tornar al blog'}
-                </Link>
-                <BlogLanguageSwitcher />
+            <div className="w-full flex flex-row justify-center gap-0 lg:gap-8">
+              {/* Índex sticky a l'esquerra */}
+              <div className="hidden lg:flex flex-col flex-shrink-0 w-[260px] pl-4 lg:pl-40 mt-12 pb-40">
+                <TableOfContents html={post.content} locale={params.locale} />
               </div>
+              {/* Contingut principal centrat */}
+              <div className="flex-1 flex flex-col items-center">
+                <div className="w-full max-w-3xl px-4 pt-12 pb-32">
+                  <div className="flex justify-between items-center mb-8">
+                    <Link 
+                      href={`/${params.locale}/blog`}
+                      className="inline-flex items-center text-gray-600 hover:text-gray-900"
+                    >
+                      <ArrowLeft className="h-4 w-4 mr-2" />
+                      {params.locale === 'es' ? 'Volver al blog' : 'Tornar al blog'}
+                    </Link>
+                    <BlogLanguageSwitcher />
+                  </div>
 
-              <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-img:rounded-xl">
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                  <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-img:rounded-xl">
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                  </div>
+
+                  <hr className="my-12 border-gray-200" />
+
+                  <div className="flex justify-between items-center">
+                    <Link 
+                      href={`/${params.locale}/blog`}
+                      className="text-rose-500 hover:text-rose-600 font-medium"
+                    >
+                      {params.locale === 'es' ? '← Artículos recientes' : '← Articles recents'}
+                    </Link>
+                    <Link 
+                      href={`/${params.locale}/contacte`}
+                      className="text-rose-500 hover:text-rose-600 font-medium"
+                    >
+                      {params.locale === 'es' ? 'Contáctanos →' : "Contacta'ns →"}
+                    </Link>
+                  </div>
+                </div>
               </div>
-
-              <hr className="my-12 border-gray-200" />
-
-              <div className="flex justify-between items-center">
-                <Link 
-                  href={`/${params.locale}/blog`}
-                  className="text-rose-500 hover:text-rose-600 font-medium"
-                >
-                  {params.locale === 'es' ? '← Artículos recientes' : '← Articles recents'}
-                </Link>
-                <Link 
-                  href={`/${params.locale}/contacte`}
-                  className="text-rose-500 hover:text-rose-600 font-medium"
-                >
-                  {params.locale === 'es' ? 'Contáctanos →' : "Contacta'ns →"}
-                </Link>
-              </div>
+              {/* Espai lateral dret per simetria */}
+              <div className="hidden lg:block w-[60px] flex-shrink-0"></div>
             </div>
           </article>
         </main>

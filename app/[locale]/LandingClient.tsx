@@ -8,6 +8,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { FAQ } from "@/components/faq";
+import TestimonialsCarousel from "@/components/testimonials-carousel";
 
 export default function LandingClient() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -126,44 +127,7 @@ export default function LandingClient() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonis" className="py-16 md:py-24 bg-white">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{testimonials('title')}</h2>
-              <div className="h-1 w-20 bg-rose-500 mx-auto mt-4"></div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonials.raw('list').map((item: any, i: number) => (
-                <Card key={i} className="border-none shadow-lg">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 italic">{item.text}</p>
-                    <div className="flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-full bg-gray-200 overflow-hidden relative">
-                        <Image
-                          src={item.image}
-                          alt="Testimoni"
-                          fill
-                          className="object-cover"
-                          unoptimized
-                        />
-                      </div>
-                      <div>
-                        <p className="font-semibold">{item.name}</p>
-                        <p className="text-sm text-gray-500">{item.role}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TestimonialsCarousel />
 
         {/* How It Works Section */}
         <section id="com-funciona" className="py-16 md:py-24 bg-rose-50">

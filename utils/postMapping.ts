@@ -89,7 +89,16 @@ export const postMapping: Record<string, { ca: string; es: string }> = {
   'por-que-hacen-bullying': {
     ca: 'per-que-fan-bullying',
     es: 'por-que-hacen-bullying'
+  },
+  '10-ejemplos-de-bullying-y-como-detenerlo': {
+    ca: '10-exemples-assetjament-escolar-i-laboral',
+    es: '10-ejemplos-de-bullying-y-como-detenerlo'
+  },
+  'bullying-psicologico-ejemplos-reales': {
+    ca: 'bullying-psicologic-exemples-reals',
+    es: 'bullying-psicologico-ejemplos-reales'
   }
+
 };
 
 // Funció per obtenir el slug traduït
