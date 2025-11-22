@@ -161,5 +161,170 @@
       "copyright": "Tots els drets reservats.",
       "powered": "Powered by",
       "developer": "CodiXperts"
+    },
+    "landing": {
+      "aboveTheFold": {
+        "eyebrow": "Per a nens i adults que pateixen bullying o mobbing",
+        "headline": "Supera el bullying i el mobbing amb resultats des de la primera sessió",
+        "valueBullets": [
+          "Resultats des de la primera sessió",
+          "Sessions presencials a Terrassa o online",
+          "Mètode provat amb centenars de casos",
+          "Enfocament 100% personalitzat",
+          "10+ anys d'experiència especialitzada"
+        ],
+        "cta": "Reserva la teva consulta gratuïta",
+        "frictionRemover": "Consulta confidencial sense compromís",
+        "socialProof": "Centenars de persones ja han recuperat la seva confiança"
+      },
+      "leadSection": {
+        "usps": "Més de 10 anys d'experiència. Centenars de persones ajudades. Resultats des de la primera sessió.",
+        "painPoint": "Et sents atrapat per situacions d'assetjament? No saps com posar-hi fi sense que empitjori?",
+        "solutionTeaser": "El nostre mètode de coaching et dona les eines per superar el bullying o mobbing i recuperar el control de la teva vida."
+      },
+      "proofSection": {
+        "reviews": [
+          {
+            "quote": "Ha recuperat el somriure, i això no té preu.",
+            "author": "Maria G.",
+            "context": "Mare d'un nen de 10 anys",
+            "image": "/maria.jpg"
+          },
+          {
+            "quote": "He pogut recuperar la meva dignitat a la feina.",
+            "author": "Jordi P.",
+            "context": "Professional de 35 anys",
+            "image": "/jordi.jpg"
+          },
+          {
+            "quote": "Ara ella se sent més forta i no està sola.",
+            "author": "Clàudia R.",
+            "context": "Mare d'una adolescent de 14 anys",
+            "image": "/claudia.jpeg"
+          },
+          {
+            "quote": "Em van ajudar a entendre què estava passant i com protegir-me emocionalment.",
+            "author": "Albert M.",
+            "context": "Funcionari de 42 anys",
+            "image": "/albert.jpeg"
+          }
+        ],
+        "mediaMentions": ""
+      },
+      "benefitsSection": {
+        "headline": "Recupera la teva confiança i el control de la teva vida",
+        "bullets": [
+          "Millora la teva autoestima i confiança en tu mateix",
+          "Aprèn estratègies pràctiques per afrontar situacions d'assetjament",
+          "Desenvolupa habilitats de comunicació que et protegeixen",
+          "Recupera el benestar emocional i la pau mental",
+          "Construeix relacions saludables sense por ni ansietat"
+        ]
+      },
+      "powerDifferentiators": {
+        "headline": "Què ens fa diferents",
+        "bullets": [
+          "Resultats des de la primera sessió - no cal esperar mesos",
+          "Sessions presencials a Terrassa o online - tria el format que et vagi millor",
+          "Mètode provat amb centenars de casos d'èxit",
+          "Enfocament 100% personalitzat adaptat a la teva situació",
+          "10+ anys d'experiència especialitzada en bullying i mobbing",
+          "Confidencialitat total - el teu espai segur per obrir-te",
+          "Eines pràctiques que pots aplicar immediatament",
+          "Acompanyament continu fins que recuperis el control"
+        ]
+      },
+      "howItWorks": {
+        "headline": "Tres passos simples cap a la llibertat",
+        "steps": [
+          {
+            "title": "1. Consulta inicial (60 min)",
+            "desc": "Analitzem la teva situació i definim un pla d'acció personalitzat"
+          },
+          {
+            "title": "2. Sessions de coaching (6-8 sessions)",
+            "desc": "Desenvolupem les habilitats i estratègies que necessites per superar la situació"
+          },
+          {
+            "title": "3. Resultats duradors",
+            "desc": "Apliques les eines a la vida real i recuperes la teva confiança i benestar"
+          }
+        ]
+      },
+      "offerSection": {
+        "headline": "Reserva la teva consulta inicial avui",
+        "bullets": [
+          "Consulta inicial per avaluar la teva situació",
+          "Pla personalitzat adaptat als teus objectius",
+          "Sessions presencials o online segons prefereixis",
+          "Eines pràctiques que funcionen des del primer dia"
+        ],
+        "cta": "Reserva la teva consulta gratuïta",
+        "frictionRemover": "Sense compromís. Confidencialitat total."
+      },
+      "aboutTeam": {
+        "headline": "El teu equip d'experts",
+        "content": "Amb més de 10 anys d'experiència especialitzada, hem ajudat a centenars de persones a superar situacions de bullying i mobbing. El nostre enfocament personalitzat i empàtic et proporciona les eines i el suport que necessites per recuperar el control de la teva vida."
+      },
+      "socialProofIntent": {
+        "headline": "Per a qui és aquest servei",
+        "archetypes": [
+          {
+            "title": "Nens i adolescents amb bullying escolar",
+            "description": "El teu fill o filla pateix assetjament a l'escola i no saps com ajudar-lo",
+            "testimonial": "El meu fill ha recuperat el somriure i la confiança. - Maria G."
+          },
+          {
+            "title": "Adults amb mobbing laboral",
+            "description": "Pateixes assetjament al treball i necessites eines per protegir-te",
+            "testimonial": "He recuperat la meva dignitat a la feina. - Jordi P."
+          },
+          {
+            "title": "Pares preocupats",
+            "description": "El teu fill o filla està patint i necessites orientació professional",
+            "testimonial": "Ara ella se sent més forta i no està sola. - Clàudia R."
+          }
+        ]
+      },
+      "faqs": {
+        "headline": "Preguntes freqüents",
+        "questions": [
+          {
+            "question": "Funciona realment? Veig resultats ràpid?",
+            "answer": "Sí. Moltes persones comencen a sentir alleujament i claredat des de la primera sessió. El nostre mètode proporciona eines pràctiques que pots aplicar immediatament."
+          },
+          {
+            "question": "Com sé si estic patint bullying o mobbing?",
+            "answer": "A la primera consulta analitzem la teva situació amb calma i confidencialitat per determinar si es tracta d'assetjament i com et podem ajudar."
+          },
+          {
+            "question": "Les sessions són presencials o online?",
+            "answer": "Pots triar el format que et vagi millor. Oferim sessions presencials a Terrassa i també sessions online amb la mateixa qualitat."
+          },
+          {
+            "question": "Quina durada tenen les sessions?",
+            "answer": "Cada sessió dura una hora. La freqüència ideal és setmanal, però ens adaptem al teu ritme i disponibilitat."
+          },
+          {
+            "question": "És confidencial?",
+            "answer": "Absolutament. Totes les sessions són 100% confidencials. El teu espai segur per obrir-te sense por."
+          },
+          {
+            "question": "Quants de temps necessito per veure resultats?",
+            "answer": "Moltes persones noten millores des de la primera sessió. El procés complet sol durar 6-8 sessions, però cada persona és diferent."
+          }
+        ]
+      },
+      "fullStop": {
+        "headline": "Lliura't del bullying i el mobbing avui",
+        "bullets": [
+          "Resultats des de la primera sessió",
+          "Mètode provat amb centenars de casos",
+          "Sessions presencials o online",
+          "Enfocament 100% personalitzat"
+        ],
+        "cta": "Reserva la teva consulta gratuïta",
+        "frictionRemover": "Sense compromís. Confidencialitat garantida."
+      }
     }
   }

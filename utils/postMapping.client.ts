@@ -1,3 +1,6 @@
+// Versió client del postMapping - només conté el mapping manual
+// No pot usar fs perquè només funciona al servidor
+
 // Mapeig de posts entre idiomes
 // Clau: identificador únic del post
 // Valor: objecte amb els slugs per a cada idioma
@@ -98,12 +101,11 @@ export const postMapping: Record<string, { ca: string; es: string }> = {
     ca: 'bullying-psicologic-exemples-reals',
     es: 'bullying-psicologico-ejemplos-reales'
   }
-
 };
 
-// Funció per obtenir el slug traduït (versió servidor amb detecció automàtica)
+// Funció per obtenir el slug traduït (versió client - només mapping manual)
 export function getTranslatedSlug(currentSlug: string, currentLocale: string, targetLocale: string): string | null {
-  // Primer, buscar al mapeig manual
+  // Buscar al mapeig manual
   const postKey = Object.keys(postMapping).find(key => 
     postMapping[key][currentLocale as 'ca' | 'es'] === currentSlug
   );
@@ -112,64 +114,23 @@ export function getTranslatedSlug(currentSlug: string, currentLocale: string, ta
     return postMapping[postKey][targetLocale as 'ca' | 'es'] || null;
   }
   
-  // Si no es troba al mapeig manual, comprovar si existeix un fitxer amb el mateix nom
-  // Això només funciona al servidor (amb fs)
-  // Verificar si estem al servidor abans d'intentar usar fs
-  if (typeof window !== 'undefined') {
-    return null; // Estem al client, no podem usar fs
-  }
+  // Al client, si no es troba al mapping manual, comprovar si el slug és igual
+  // (per a posts amb el mateix nom en ambdós idiomes)
+  // Normalitzar per comparar
+  const normalizeSlug = (slug: string) => {
+    return slug
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/['']/g, '')
+      .replace(/[ñ]/g, 'n')
+      .replace(/[ç]/g, 'c');
+  };
   
-  try {
-    const fs = require('fs');
-    const path = require('path');
-    
-    const targetBlogDir = path.join(process.cwd(), 'public/blog', targetLocale);
-    
-    if (!fs.existsSync(targetBlogDir)) {
-      return null;
-    }
-    
-    // Normalitzar el slug per comparar (sense accents, minúscules)
-    // Utilitza normalització Unicode per eliminar accents de forma més robusta
-    const normalizeSlug = (slug: string) => {
-      return slug
-        .toLowerCase()
-        .normalize('NFD') // Descomposa caràcters amb accents
-        .replace(/[\u0300-\u036f]/g, '') // Elimina marques diacrítiques
-        .replace(/['']/g, '') // Elimina apostrofs especials
-        .replace(/[ñ]/g, 'n') // Mantenir la ñ com a n
-        .replace(/[ç]/g, 'c'); // Mantenir la ç com a c
-    };
-    
-    const normalizedCurrentSlug = normalizeSlug(currentSlug);
-    
-    // Buscar tots els fitxers a la carpeta de l'idioma destí
-    const files = fs.readdirSync(targetBlogDir);
-    
-    // Buscar un fitxer que coincideixi quan es normalitza
-    const matchingFile = files.find((filename: string) => {
-      const fileSlug = filename.replace('.md', '');
-      const normalizedFileSlug = normalizeSlug(fileSlug);
-      return normalizedFileSlug === normalizedCurrentSlug;
-    });
-    
-    if (matchingFile) {
-      // Retornar el slug real del fitxer trobat (sense l'extensió .md)
-      return matchingFile.replace('.md', '');
-    }
-    
-    // Si no es troba cap fitxer normalitzat, comprovar si el slug exacte existeix
-    const exactFile = `${currentSlug}.md`;
-    if (files.includes(exactFile)) {
-      return currentSlug;
-    }
-    
-    return null;
-  } catch (error) {
-    // Si hi ha un error (per exemple, si s'executa al client), retornar null
-    // El client haurà de cridar a l'API route
-    return null;
-  }
+  // Si el slug normalitzat és igual, assumir que és el mateix
+  // Però al client no podem verificar si el fitxer existeix, així que retornem null
+  // i deixem que l'API route ho gestioni si cal
+  return null;
 }
 
 // Funció per obtenir l'identificador únic del post
@@ -179,4 +140,5 @@ export function getPostId(slug: string, locale: string): string | null {
   );
   
   return postKey || null;
-} 
+}
+

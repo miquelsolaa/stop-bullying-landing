@@ -1,10 +1,10 @@
 import { getBlogPosts } from '@/utils/getBlogPosts'
-import { Navbar } from '@/components/navbar'
 import Image from 'next/image'
 import Link from 'next/link'
-import { generateMetadata as baseGenerateMetadata } from '../../metadata'
+import { generateMetadata as baseGenerateMetadata } from '../../../../metadata'
 import type { Metadata } from 'next'
 import { BlogPagination } from '@/components/blog-pagination'
+import { notFound } from 'next/navigation'
 
 // Forçar render dinàmic per evitar problemes amb SSG
 export const dynamic = 'force-dynamic'
@@ -19,26 +19,42 @@ const descriptions = {
   es: "Descubre artículos, guías y testimonios para superar el bullying y el mobbing en Barcelona. Consejos prácticos y experiencias reales."
 };
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export function generateMetadata({ params }: { params: { locale: string; page: string } }): Metadata {
   const locale = params.locale === 'es' ? 'es' : 'ca';
+  const pageNumber = parseInt(params.page, 10);
+  
   return baseGenerateMetadata({
-    title: titles[locale],
+    title: pageNumber > 1 ? `${titles[locale]} - Pàgina ${pageNumber}` : titles[locale],
     description: descriptions[locale],
-    path: '/blog'
+    path: `/blog/page/${pageNumber}`
   });
 }
 
-export default async function BlogPage({ params }: { params: { locale: string } }) {
-  const result = await getBlogPosts(params.locale, 1, 15)
+export default async function BlogPagePage({ 
+  params 
+}: { 
+  params: { locale: string; page: string } 
+}) {
+  const pageNumber = parseInt(params.page, 10);
   
-  // Type guard per verificar si és paginat o no
-  const isPaginated = result && typeof result === 'object' && 'posts' in result
-  const posts = isPaginated ? result.posts : result
-  const pagination = isPaginated ? {
-    totalPosts: result.totalPosts,
-    totalPages: result.totalPages,
-    currentPage: result.currentPage,
-  } : null
+  // Validar que el número de pàgina és vàlid
+  if (isNaN(pageNumber) || pageNumber < 2) {
+    notFound();
+  }
+
+  const result = await getBlogPosts(params.locale, pageNumber, 15);
+  
+  // Type guard per verificar si és paginat
+  if (!result || typeof result !== 'object' || !('posts' in result)) {
+    notFound();
+  }
+
+  const { posts, totalPages, currentPage } = result;
+
+  // Si la pàgina demanada no existeix, mostrar 404
+  if (currentPage !== pageNumber || pageNumber > totalPages) {
+    notFound();
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -81,16 +97,15 @@ export default async function BlogPage({ params }: { params: { locale: string } 
                 </article>
               ))}
             </div>
-            {pagination && (
-              <BlogPagination
-                currentPage={pagination.currentPage}
-                totalPages={pagination.totalPages}
-                locale={params.locale}
-              />
-            )}
+            <BlogPagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              locale={params.locale}
+            />
           </div>
         </section>
       </main>
     </div>
   )
 }
+

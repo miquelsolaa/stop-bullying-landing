@@ -14,10 +14,10 @@ export function Navbar() {
 
   // Generar el prefix correcte per als links
   const getLocalePath = (path: string = '') => {
-    // Si és un anchor (comença amb #)
+    // Si és un anchor (comença amb #), sempre apuntar a la landing page amb l'anchor
     if (path.startsWith('#')) {
       if (locale === routing.defaultLocale) {
-        return path // només el anchor, ex: #sobre-nosaltres
+        return `/${path}` // ex: /#sobre-nosaltres
       }
       return `/${locale}${path}` // ex: /es#sobre-nosaltres
     }

@@ -151,17 +151,182 @@
       }
     ]
   },
-  "footer": {
-    "brand": "Stop Bullying",
-    "desc": "Servicio de coaching de comunicación en Terrassa, especializado en ayudar a niños y adultos a superar el bullying, el mobbing y a desarrollar habilidades sociales para mejorar sus relaciones personales y laborales.",
-    "contact": "Contacto",
-    "location": "Terrassa, Barcelona",
-    "email": "contacte@stopbullyingmobbing.com",
-    "phone": "+34 646 35 78 01",
-    "follow": "Síguenos",
-    "facebook": "Facebook",
-    "copyright": "Todos los derechos reservados.",
-    "powered": "Powered by",
-    "developer": "CodiXperts"
+    "footer": {
+      "brand": "Stop Bullying",
+      "desc": "Servicio de coaching de comunicación en Terrassa, especializado en ayudar a niños y adultos a superar el bullying, el mobbing y a desarrollar habilidades sociales para mejorar sus relaciones personales y laborales.",
+      "contact": "Contacto",
+      "location": "Terrassa, Barcelona",
+      "email": "contacte@stopbullyingmobbing.com",
+      "phone": "+34 646 35 78 01",
+      "follow": "Síguenos",
+      "facebook": "Facebook",
+      "copyright": "Todos los derechos reservados.",
+      "powered": "Powered by",
+      "developer": "CodiXperts"
+    },
+    "landing": {
+      "aboveTheFold": {
+        "eyebrow": "Para niños y adultos que sufren bullying o mobbing",
+        "headline": "Supera el bullying y el mobbing con resultados desde la primera sesión",
+        "valueBullets": [
+          "Resultados desde la primera sesión",
+          "Sesiones presenciales en Terrassa u online",
+          "Método probado con cientos de casos",
+          "Enfoque 100% personalizado",
+          "10+ años de experiencia especializada"
+        ],
+        "cta": "Reserva tu consulta gratuita",
+        "frictionRemover": "Consulta confidencial sin compromiso",
+        "socialProof": "Cientos de personas ya han recuperado su confianza"
+      },
+      "leadSection": {
+        "usps": "Más de 10 años de experiencia. Cientos de personas ayudadas. Resultados desde la primera sesión.",
+        "painPoint": "¿Te sientes atrapado por situaciones de acoso? ¿No sabes cómo ponerles fin sin que empeore?",
+        "solutionTeaser": "Nuestro método de coaching te da las herramientas para superar el bullying o mobbing y recuperar el control de tu vida."
+      },
+      "proofSection": {
+        "reviews": [
+          {
+            "quote": "Ha recuperado su sonrisa, y eso no tiene precio.",
+            "author": "María G.",
+            "context": "Madre de un niño de 10 años",
+            "image": "/maria.jpg"
+          },
+          {
+            "quote": "He podido recuperar mi dignidad en el trabajo.",
+            "author": "Jordi P.",
+            "context": "Profesional de 35 años",
+            "image": "/jordi.jpg"
+          },
+          {
+            "quote": "Ahora ella se siente más fuerte y ya no está sola.",
+            "author": "Claudia R.",
+            "context": "Madre de una adolescente de 14 años",
+            "image": "/claudia.jpeg"
+          },
+          {
+            "quote": "Me ayudaron a entender lo que estaba pasando y cómo protegerme emocionalmente.",
+            "author": "Albert M.",
+            "context": "Funcionario de 42 años",
+            "image": "/albert.jpeg"
+          }
+        ],
+        "mediaMentions": ""
+      },
+      "benefitsSection": {
+        "headline": "Recupera tu confianza y el control de tu vida",
+        "bullets": [
+          "Mejora tu autoestima y confianza en ti mismo",
+          "Aprende estrategias prácticas para afrontar situaciones de acoso",
+          "Desarrolla habilidades de comunicación que te protegen",
+          "Recupera el bienestar emocional y la paz mental",
+          "Construye relaciones saludables sin miedo ni ansiedad"
+        ]
+      },
+      "powerDifferentiators": {
+        "headline": "Qué nos hace diferentes",
+        "bullets": [
+          "Resultados desde la primera sesión - no hay que esperar meses",
+          "Sesiones presenciales en Terrassa u online - elige el formato que te vaya mejor",
+          "Método probado con cientos de casos de éxito",
+          "Enfoque 100% personalizado adaptado a tu situación",
+          "10+ años de experiencia especializada en bullying y mobbing",
+          "Confidencialidad total - tu espacio seguro para abrirte",
+          "Herramientas prácticas que puedes aplicar inmediatamente",
+          "Acompañamiento continuo hasta que recuperes el control"
+        ]
+      },
+      "howItWorks": {
+        "headline": "Tres pasos simples hacia la libertad",
+        "steps": [
+          {
+            "title": "1. Consulta inicial (60 min)",
+            "desc": "Analizamos tu situación y definimos un plan de acción personalizado"
+          },
+          {
+            "title": "2. Sesiones de coaching (6-8 sesiones)",
+            "desc": "Desarrollamos las habilidades y estrategias que necesitas para superar la situación"
+          },
+          {
+            "title": "3. Resultados duraderos",
+            "desc": "Aplicas las herramientas en la vida real y recuperas tu confianza y bienestar"
+          }
+        ]
+      },
+      "offerSection": {
+        "headline": "Reserva tu consulta inicial hoy",
+        "bullets": [
+          "Consulta inicial para evaluar tu situación",
+          "Plan personalizado adaptado a tus objetivos",
+          "Sesiones presenciales u online según prefieras",
+          "Herramientas prácticas que funcionan desde el primer día"
+        ],
+        "cta": "Reserva tu consulta gratuita",
+        "frictionRemover": "Sin compromiso. Confidencialidad total."
+      },
+      "aboutTeam": {
+        "headline": "Tu equipo de expertos",
+        "content": "Con más de 10 años de experiencia especializada, hemos ayudado a cientos de personas a superar situaciones de bullying y mobbing. Nuestro enfoque personalizado y empático te proporciona las herramientas y el apoyo que necesitas para recuperar el control de tu vida."
+      },
+      "socialProofIntent": {
+        "headline": "Para quién es este servicio",
+        "archetypes": [
+          {
+            "title": "Niños y adolescentes con bullying escolar",
+            "description": "Tu hijo o hija sufre acoso en la escuela y no sabes cómo ayudarle",
+            "testimonial": "Mi hijo ha recuperado su sonrisa y su confianza. - María G."
+          },
+          {
+            "title": "Adultos con mobbing laboral",
+            "description": "Sufres acoso en el trabajo y necesitas herramientas para protegerte",
+            "testimonial": "He recuperado mi dignidad en el trabajo. - Jordi P."
+          },
+          {
+            "title": "Padres preocupados",
+            "description": "Tu hijo o hija está sufriendo y necesitas orientación profesional",
+            "testimonial": "Ahora ella se siente más fuerte y ya no está sola. - Claudia R."
+          }
+        ]
+      },
+      "faqs": {
+        "headline": "Preguntas frecuentes",
+        "questions": [
+          {
+            "question": "¿Funciona realmente? ¿Veo resultados rápido?",
+            "answer": "Sí. Muchas personas empiezan a sentir alivio y claridad desde la primera sesión. Nuestro método proporciona herramientas prácticas que puedes aplicar inmediatamente."
+          },
+          {
+            "question": "¿Cómo sé si estoy sufriendo bullying o mobbing?",
+            "answer": "En la primera consulta analizamos tu situación con calma y confidencialidad para determinar si se trata de acoso y cómo podemos ayudarte."
+          },
+          {
+            "question": "¿Las sesiones son presenciales u online?",
+            "answer": "Puedes elegir el formato que te vaya mejor. Ofrecemos sesiones presenciales en Terrassa y también sesiones online con la misma calidad."
+          },
+          {
+            "question": "¿Qué duración tienen las sesiones?",
+            "answer": "Cada sesión dura una hora. La frecuencia ideal es semanal, pero nos adaptamos a tu ritmo y disponibilidad."
+          },
+          {
+            "question": "¿Es confidencial?",
+            "answer": "Absolutamente. Todas las sesiones son 100% confidenciales. Tu espacio seguro para abrirte sin miedo."
+          },
+          {
+            "question": "¿Cuánto tiempo necesito para ver resultados?",
+            "answer": "Muchas personas notan mejoras desde la primera sesión. El proceso completo suele durar 6-8 sesiones, pero cada persona es diferente."
+          }
+        ]
+      },
+      "fullStop": {
+        "headline": "Libérate del bullying y el mobbing hoy",
+        "bullets": [
+          "Resultados desde la primera sesión",
+          "Método probado con cientos de casos",
+          "Sesiones presenciales u online",
+          "Enfoque 100% personalizado"
+        ],
+        "cta": "Reserva tu consulta gratuita",
+        "frictionRemover": "Sin compromiso. Confidencialidad garantizada."
+      }
+    }
   }
-} 

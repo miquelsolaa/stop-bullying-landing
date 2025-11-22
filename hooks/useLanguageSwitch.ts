@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { routing } from '@/i18n/routing'
-import { getTranslatedSlug } from '@/utils/postMapping'
+import { getTranslatedSlug } from '@/utils/postMapping.client'
 
 export function useLanguageSwitch() {
   const locale = useLocale() as 'ca' | 'es'
