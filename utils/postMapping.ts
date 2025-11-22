@@ -101,18 +101,70 @@ export const postMapping: Record<string, { ca: string; es: string }> = {
 
 };
 
-// Funció per obtenir el slug traduït
+// Funció per obtenir el slug traduït (versió servidor amb detecció automàtica)
 export function getTranslatedSlug(currentSlug: string, currentLocale: string, targetLocale: string): string | null {
-  // Buscar el post al mapeig
+  // Primer, buscar al mapeig manual
   const postKey = Object.keys(postMapping).find(key => 
     postMapping[key][currentLocale as 'ca' | 'es'] === currentSlug
   );
   
-  if (!postKey) {
-    return null; // No hi ha traducció
+  if (postKey) {
+    return postMapping[postKey][targetLocale as 'ca' | 'es'] || null;
   }
   
-  return postMapping[postKey][targetLocale as 'ca' | 'es'] || null;
+  // Si no es troba al mapeig manual, comprovar si existeix un fitxer amb el mateix nom
+  // Això només funciona al servidor (amb fs)
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    
+    const targetBlogDir = path.join(process.cwd(), 'public/blog', targetLocale);
+    
+    if (!fs.existsSync(targetBlogDir)) {
+      return null;
+    }
+    
+    // Normalitzar el slug per comparar (sense accents, minúscules)
+    // Utilitza normalització Unicode per eliminar accents de forma més robusta
+    const normalizeSlug = (slug: string) => {
+      return slug
+        .toLowerCase()
+        .normalize('NFD') // Descomposa caràcters amb accents
+        .replace(/[\u0300-\u036f]/g, '') // Elimina marques diacrítiques
+        .replace(/['']/g, '') // Elimina apostrofs especials
+        .replace(/[ñ]/g, 'n') // Mantenir la ñ com a n
+        .replace(/[ç]/g, 'c'); // Mantenir la ç com a c
+    };
+    
+    const normalizedCurrentSlug = normalizeSlug(currentSlug);
+    
+    // Buscar tots els fitxers a la carpeta de l'idioma destí
+    const files = fs.readdirSync(targetBlogDir);
+    
+    // Buscar un fitxer que coincideixi quan es normalitza
+    const matchingFile = files.find((filename: string) => {
+      const fileSlug = filename.replace('.md', '');
+      const normalizedFileSlug = normalizeSlug(fileSlug);
+      return normalizedFileSlug === normalizedCurrentSlug;
+    });
+    
+    if (matchingFile) {
+      // Retornar el slug real del fitxer trobat (sense l'extensió .md)
+      return matchingFile.replace('.md', '');
+    }
+    
+    // Si no es troba cap fitxer normalitzat, comprovar si el slug exacte existeix
+    const exactFile = `${currentSlug}.md`;
+    if (files.includes(exactFile)) {
+      return currentSlug;
+    }
+    
+    return null;
+  } catch (error) {
+    // Si hi ha un error (per exemple, si s'executa al client), retornar null
+    // El client haurà de cridar a l'API route
+    return null;
+  }
 }
 
 // Funció per obtenir l'identificador únic del post

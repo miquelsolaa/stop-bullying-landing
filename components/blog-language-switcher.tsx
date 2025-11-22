@@ -1,14 +1,20 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { getTranslatedSlug } from "@/utils/postMapping"
 import { usePathname, useRouter } from "next/navigation"
 import { Languages } from "lucide-react"
 import { routing } from '@/i18n/routing'
+import { useEffect, useState } from 'react'
 
-export function BlogLanguageSwitcher() {
+interface BlogLanguageSwitcherProps {
+  translatedSlug?: string | null
+}
+
+export function BlogLanguageSwitcher({ translatedSlug: serverTranslatedSlug }: BlogLanguageSwitcherProps) {
   const pathname = usePathname()
   const router = useRouter()
+  const [translatedSlug, setTranslatedSlug] = useState<string | null>(serverTranslatedSlug || null)
+  const [loading, setLoading] = useState(!serverTranslatedSlug)
   
   // Detectar el locale actual correctament
   const getLocaleFromPathname = (path: string) => {
@@ -47,12 +53,31 @@ export function BlogLanguageSwitcher() {
   
   const currentLocale = getLocaleFromPathname(pathname) as 'ca' | 'es'
   const slug = getSlugFromPath(pathname, currentLocale)
-  
-  // Check if there's a translation available
   const newLocale = currentLocale === 'ca' ? 'es' : 'ca'
-  const translatedSlug = getTranslatedSlug(slug, currentLocale, newLocale)
+
+  // Si no tenim el slug traduït del servidor, intentar obtenir-lo via API
+  useEffect(() => {
+    if (!serverTranslatedSlug && slug) {
+      const fetchTranslatedSlug = async () => {
+        try {
+          const response = await fetch(
+            `/api/blog/translate-slug?slug=${encodeURIComponent(slug)}&currentLocale=${currentLocale}&targetLocale=${newLocale}`
+          )
+          if (response.ok) {
+            const data = await response.json()
+            setTranslatedSlug(data.translatedSlug)
+          }
+        } catch (error) {
+          console.error('Error fetching translated slug:', error)
+        } finally {
+          setLoading(false)
+        }
+      }
+      fetchTranslatedSlug()
+    }
+  }, [slug, currentLocale, newLocale, serverTranslatedSlug])
   
-  if (!translatedSlug) {
+  if (loading || !translatedSlug) {
     return null // No translation available
   }
 

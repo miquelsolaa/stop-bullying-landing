@@ -1,6 +1,7 @@
 import { getBlogPost } from '@/utils/getBlogPost'
 import { getBlogPosts } from '@/utils/getBlogPosts'
 import { BlogLanguageSwitcher } from '@/components/blog-language-switcher'
+import { getTranslatedSlug } from '@/utils/postMapping'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
@@ -54,14 +55,18 @@ export default async function BlogPostPage({
       throw new Error('Post not found')
     }
 
+    // Obtenir el slug traduït per al canviador d'idioma
+    const targetLocale = params.locale === 'ca' ? 'es' : 'ca'
+    const translatedSlug = getTranslatedSlug(params.slug, params.locale, targetLocale)
+
     return (
       <div className="flex flex-col min-h-screen">
         <main className="flex-1">
           <article>
             <div className="relative h-[500px] w-full bg-gradient-to-b from-gray-900/90 to-gray-900/90">
-              {post.thumbnail && (
+              {post.image && (
                 <Image
-                  src={post.thumbnail}
+                  src={post.image}
                   alt={post.title}
                   fill
                   className="object-cover mix-blend-overlay"
@@ -95,7 +100,7 @@ export default async function BlogPostPage({
                       <ArrowLeft className="h-4 w-4 mr-2" />
                       {params.locale === 'es' ? 'Volver al blog' : 'Tornar al blog'}
                     </Link>
-                    <BlogLanguageSwitcher />
+                    <BlogLanguageSwitcher translatedSlug={translatedSlug} />
                   </div>
 
                   <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-img:rounded-xl">

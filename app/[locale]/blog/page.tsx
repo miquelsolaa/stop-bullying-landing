@@ -49,7 +49,7 @@ export default async function BlogPage({ params }: { params: { locale: string } 
                 <article key={post.slug} className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div className="relative h-48">
                     <Image
-                      src={post.thumbnail}
+                      src={post.image || post.thumbnail}
                       alt={post.title}
                       fill
                       className="object-cover"

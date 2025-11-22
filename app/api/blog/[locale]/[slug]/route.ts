@@ -79,7 +79,7 @@ export async function GET(
       slug,
       title: data.title,
       date: data.date,
-      thumbnail: data.thumbnail,
+      image: data.image || data.thumbnail, // Suporta 'image' i retrocompatibilitat amb 'thumbnail'
       description: data.description,
       content: contentHtml,
     }
