@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import remarkSlug from 'remark-slug'
 
 export async function getBlogPost(slug: string, locale: string = 'ca') {
   try {
@@ -59,6 +60,7 @@ export async function getBlogPost(slug: string, locale: string = 'ca') {
     
     const processedContent = await remark()
       .use(remarkGfm)
+      .use(remarkSlug)
       .use(html)
       .process(content)
     const contentHtml = processedContent.toString()
