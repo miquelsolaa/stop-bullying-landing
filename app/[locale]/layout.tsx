@@ -3,6 +3,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { generateMetadata, siteConfig } from '../metadata';
 
 function getAlternateLinks(locale: string, path: string) {
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body>
+        <GoogleAnalytics />
         <NextIntlClientProvider>
           <Navbar />
           {children}

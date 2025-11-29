@@ -7,7 +7,10 @@ export function useGoogleAnalytics() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    const url = pathname + searchParams.toString()
+    if (typeof window === 'undefined' || !window.gtag) return
+    
+    const search = searchParams.toString()
+    const url = pathname + (search ? `?${search}` : '')
     pageview(url)
   }, [pathname, searchParams])
 }
