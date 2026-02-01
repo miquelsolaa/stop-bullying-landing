@@ -69,9 +69,12 @@ export async function getBlogPost(slug: string, locale: string = 'ca') {
       slug,
       title: data.title,
       date: data.date,
-      image: data.image || data.thumbnail, // Suporta 'image' i retrocompatibilitat amb 'thumbnail'
+      image: data.image || data.thumbnail,
       description: data.description,
       content: contentHtml,
+      category: data.category,
+      author: data.author,
+      tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : undefined,
     }
     
     console.log(`[getBlogPost] Successfully loaded post: ${result.title}`)

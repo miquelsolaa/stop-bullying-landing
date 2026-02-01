@@ -17,7 +17,15 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sora: ["Sora", "sans-serif"],
+      },
       colors: {
+        "life-primary": "#005A6E",
+        "life-accent": "#48DBBB",
+        "life-text": "#003242",
+        "life-button-primary": "#48DBBB",
+        "life-button-secondary": "#38B2C5",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -4,103 +4,141 @@ import Link from 'next/link'
 import { generateMetadata as baseGenerateMetadata } from '../../../../metadata'
 import type { Metadata } from 'next'
 import { BlogPagination } from '@/components/blog-pagination'
+import { BlogHero } from '@/components/blog/BlogHero'
+import { getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
-// Forçar render dinàmic per evitar problemes amb SSG
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 const titles = {
   ca: "Blog sobre bullying i mobbing | Consells i recursos útils",
   es: "Blog sobre bullying y mobbing | Consejos y recursos útiles"
-};
+}
 const descriptions = {
   ca: "Descobreix articles, guies i testimonis per superar el bullying i el mobbing a Barcelona. Consells pràctics i experiències reals.",
   es: "Descubre artículos, guías y testimonios para superar el bullying y el mobbing en Barcelona. Consejos prácticos y experiencias reales."
-};
+}
 
 export function generateMetadata({ params }: { params: { locale: string; page: string } }): Metadata {
-  const locale = params.locale === 'es' ? 'es' : 'ca';
-  const pageNumber = parseInt(params.page, 10);
-  
+  const locale = params.locale === 'es' ? 'es' : 'ca'
+  const pageNumber = parseInt(params.page, 10)
   return baseGenerateMetadata({
     title: pageNumber > 1 ? `${titles[locale]} - Pàgina ${pageNumber}` : titles[locale],
     description: descriptions[locale],
     path: `/blog/page/${pageNumber}`
-  });
+  })
 }
 
-export default async function BlogPagePage({ 
-  params 
-}: { 
-  params: { locale: string; page: string } 
+export default async function BlogPagePage({
+  params
+}: {
+  params: Promise<{ locale: string; page: string }>
 }) {
-  const pageNumber = parseInt(params.page, 10);
-  
-  // Validar que el número de pàgina és vàlid
+  const { locale, page: pageParam } = await params
+  const pageNumber = parseInt(pageParam, 10)
+
   if (isNaN(pageNumber) || pageNumber < 2) {
-    notFound();
+    notFound()
   }
 
-  const result = await getBlogPosts(params.locale, pageNumber, 15);
-  
-  // Type guard per verificar si és paginat
+  const result = await getBlogPosts(locale, pageNumber, 8)
+
   if (!result || typeof result !== 'object' || !('posts' in result)) {
-    notFound();
+    notFound()
   }
 
-  const { posts, totalPages, currentPage } = result;
+  const { posts, totalPages, currentPage } = result
 
-  // Si la pàgina demanada no existeix, mostrar 404
   if (currentPage !== pageNumber || pageNumber > totalPages) {
-    notFound();
+    notFound()
   }
+
+  const t = await getTranslations('blog')
+  const dateLocale = locale === 'es' ? 'es-ES' : 'ca-ES'
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-sora">
       <main className="flex-1">
-        <section className="py-12 md:py-20 bg-gradient-to-r from-amber-50 to-rose-50">
-          <div className="container text-center space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900">Blog</h1>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              {params.locale === 'es' ? 'Artículos y recursos sobre bullying, mobbing y habilidades sociales' : 'Articles i recursos sobre bullying, mobbing i habilitats socials'}
-            </p>
-          </div>
-        </section>
+        <BlogHero
+          title={t('heroTitle')}
+          subtitle={t('heroSubtitle')}
+        />
 
-        <section className="py-12 md:py-20">
-          <div className="container">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post: any) => (
-                <article key={post.slug} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                  <div className="relative h-48">
-                    <Image
-                      src={post.image || post.thumbnail}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <time className="text-sm text-gray-500">
-                      {new Date(post.date).toLocaleDateString(params.locale === 'es' ? 'es-ES' : 'ca-ES')}
-                    </time>
-                    <h2 className="text-xl font-bold mt-2 mb-3">{post.title}</h2>
-                    <p className="text-gray-600 mb-4">{post.description}</p>
-                    <Link 
-                      href={`/${params.locale}/blog/${post.slug}`}
-                      className="text-rose-500 font-medium hover:text-rose-600"
+        <section
+          className="w-full py-12 md:py-20 bg-white"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23005A6E' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        >
+          <div className="container px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <ul className="space-y-10 md:space-y-12 list-none p-0 m-0">
+              {posts.map((post: { slug: string; title: string; description?: string; date: string; image?: string; thumbnail?: string; category?: string }) => (
+                <li key={post.slug}>
+                  <article className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-8">
+                    <Link
+                      href={locale === 'ca' ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`}
+                      className="block flex-shrink-0 w-full md:w-[min(100%,380px)] aspect-[3/2] overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-life-primary focus:ring-offset-2"
                     >
-                      {params.locale === 'es' ? 'Leer más →' : 'Llegir més →'}
+                      <Image
+                        src={post.image || post.thumbnail || ''}
+                        alt=""
+                        width={380}
+                        height={253}
+                        className="h-full w-full object-cover"
+                        sizes="(max-width: 768px) 100vw, 380px"
+                      />
                     </Link>
-                  </div>
-                </article>
+                    <div className="flex flex-col min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        {post.category && (
+                          <span className="inline-flex items-center rounded-full bg-life-primary/10 px-3 py-1 text-sm font-medium text-life-primary">
+                            {post.category}
+                          </span>
+                        )}
+                        <time
+                          dateTime={new Date(post.date).toISOString().split('T')[0]}
+                          className="text-sm text-life-text/70"
+                        >
+                          {new Date(post.date).toLocaleDateString(dateLocale, {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </time>
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-life-text mt-1 mb-3 leading-tight">
+                        <Link
+                          href={locale === 'ca' ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`}
+                          className="hover:text-life-primary transition-colors focus:outline-none focus:ring-2 focus:ring-life-primary focus:ring-offset-2 rounded"
+                        >
+                          {post.title}
+                        </Link>
+                      </h3>
+                      {post.description && (
+                        <p className="text-life-text/85 leading-relaxed mb-4 flex-1">
+                          {post.description}
+                        </p>
+                      )}
+                      <Link
+                        href={locale === 'ca' ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`}
+                        className="text-life-primary font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-life-primary focus:ring-offset-2 rounded inline-flex items-center gap-1"
+                        aria-label={t('readArticleA11y', { title: post.title })}
+                      >
+                        {t('readArticle')}: {post.title}
+                      </Link>
+                    </div>
+                  </article>
+                </li>
               ))}
-            </div>
+            </ul>
+
             <BlogPagination
               currentPage={currentPage}
               totalPages={totalPages}
-              locale={params.locale}
+              locale={locale}
+              prevPageLabel={t('prevPage')}
+              nextPageLabel={t('nextPage')}
             />
           </div>
         </section>
@@ -108,4 +146,3 @@ export default async function BlogPagePage({
     </div>
   )
 }
-

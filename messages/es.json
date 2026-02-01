@@ -25,7 +25,12 @@
     "testimonials": "Testimonios",
     "howItWorks": "Cómo Funciona",
     "contactUs": "Contáctanos",
-    "openMenu": "Abrir menú de navegación"
+    "openMenu": "Abrir menú de navegación",
+    "whoWeHelp": "A quién ayudamos",
+    "process": "Proceso",
+    "services": "Servicios",
+    "faq": "Preguntas frecuentes",
+    "bookSession": "Reserva una sesión"
   },
   "benefits": {
     "title": "Nuestros Beneficios",
@@ -103,27 +108,29 @@
     "secondary": "Más información"
   },
   "contact": {
-    "title": "Ponte en contacto con nosotros",
+    "title": "¡Contáctanos!",
     "subtitle": "Reserva tu primera sesión o haznos cualquier consulta. ¡Estamos aquí para ayudarte!",
-    "formTitle": "Envíanos un mensaje",
-    "formSubtitle": "Rellena el formulario y nos pondremos en contacto contigo lo antes posible.",
-    "name": "Nombre",
-    "namePlaceholder": "Tu nombre completo",
+    "formTitle": "Consulta de descubrimiento gratuita",
+    "formSubtitle": "Reserva tu consulta gratuita de 30 minutos o escríbenos lo que necesites.",
+    "name": "Tu nombre",
+    "namePlaceholder": "Introduce tu nombre",
     "email": "Correo electrónico",
-    "emailPlaceholder": "Tu correo electrónico",
+    "emailPlaceholder": "ejemplo@correo.com",
     "phone": "Teléfono",
-    "phonePlaceholder": "Tu número de teléfono",
+    "phonePlaceholder": "Introduce tu teléfono",
     "message": "Mensaje",
-    "messagePlaceholder": "Explícanos cómo podemos ayudarte",
+    "messagePlaceholder": "Escribe aquí",
     "sending": "Enviando...",
-    "submit": "Envía tu solicitud",
-    "success": "¡Gracias por tu mensaje! Te contactaremos pronto.",
-    "error": "Ha habido un error. Por favor, inténtalo de nuevo más tarde.",
+    "submit": "Enviar mensaje",
+    "success": "¡El formulario se ha enviado correctamente!",
+    "error": "Ha habido un error. Por favor, revisa los campos e inténtalo de nuevo.",
     "contactInfo": "Información de contacto",
+    "callMe": "Llámame",
     "emailLabel": "Correo electrónico",
     "phoneLabel": "Teléfono",
-    "ctaTitle": "Da el primer paso hacia una comunicación más efectiva",
-    "ctaSubtitle": "Contáctanos hoy mismo y comienza tu camino hacia relaciones más saludables y una mejor autoestima.",
+    "locationLabel": "Ubicación",
+    "ctaTitle": "Contáctanos y te responderemos lo antes posible",
+    "ctaSubtitle": "Reserva una sesión o envíanos tu consulta. Estamos aquí para ayudarte.",
     "ctaButton": "Reserva una consulta"
   },
   "faq": {
@@ -154,6 +161,14 @@
     "footer": {
       "brand": "Stop Bullying",
       "desc": "Servicio de coaching de comunicación en Terrassa, especializado en ayudar a niños y adultos a superar el bullying, el mobbing y a desarrollar habilidades sociales para mejorar sus relaciones personales y laborales.",
+      "contactInfo": "Información de contacto",
+      "callMe": "Llámame",
+      "emailLabel": "Correo electrónico",
+      "locationLabel": "Ubicación",
+      "quickLinks": "Enlaces rápidos",
+      "stayConnected": "Mantente conectado",
+      "newsletterText": "Suscríbete para recibir consejos y recursos sobre bullying, mobbing y habilidades sociales.",
+      "newsletterSignup": "Newsletter",
       "contact": "Contacto",
       "location": "Terrassa, Barcelona",
       "email": "contacte@stopbullyingmobbing.com",
@@ -166,8 +181,9 @@
     },
     "landing": {
       "aboveTheFold": {
-        "eyebrow": "Para niños y adultos que sufren bullying o mobbing",
+        "eyebrow": "Reserva una sesión",
         "headline": "Supera el bullying y el mobbing con resultados desde la primera sesión",
+        "subtitle": "Coaching personalizado para superar el acoso, recuperar la confianza y volver a tener el control de tu vida.",
         "valueBullets": [
           "Resultados desde la primera sesión",
           "Sesiones presenciales en Terrassa u online",
@@ -213,6 +229,12 @@
         ],
         "mediaMentions": ""
       },
+      "fourFeatures": [
+        { "title": "Recuperar la confianza", "desc": "Vuelve a confiar en ti mismo y a recuperar la autoestima después de situaciones de acoso." },
+        { "title": "Equilibrio emocional", "desc": "Aprende a gestionar el estrés y las emociones para mejorar tu bienestar y tu vida diaria." },
+        { "title": "Encontrar tu camino", "desc": "Clarifica tus objetivos y desarrolla un plan de acción personalizado para avanzar." },
+        { "title": "Gestionar el estrés", "desc": "Estrategias prácticas para mantenerte un paso por delante y proteger tu salud emocional." }
+      ],
       "benefitsSection": {
         "headline": "Recupera tu confianza y el control de tu vida",
         "bullets": [
@@ -237,20 +259,13 @@
         ]
       },
       "howItWorks": {
-        "headline": "Tres pasos simples hacia la libertad",
+        "headline": "El proceso de coaching",
         "steps": [
-          {
-            "title": "1. Consulta inicial (60 min)",
-            "desc": "Analizamos tu situación y definimos un plan de acción personalizado"
-          },
-          {
-            "title": "2. Sesiones de coaching (6-8 sesiones)",
-            "desc": "Desarrollamos las habilidades y estrategias que necesitas para superar la situación"
-          },
-          {
-            "title": "3. Resultados duraderos",
-            "desc": "Aplicas las herramientas en la vida real y recuperas tu confianza y bienestar"
-          }
+          { "title": "Clarificar la visión", "desc": "Identificamos tu situación y definimos un plan de acción personalizado." },
+          { "title": "Identificar obstáculos", "desc": "Trabajamos las creencias limitantes y las herramientas que necesitas." },
+          { "title": "Plan de acción personalizado", "desc": "Diseñamos pasos claros y alcanzables para avanzar." },
+          { "title": "Acompañamiento y apoyo", "desc": "Seguimiento regular y herramientas para mantenerte en el camino." },
+          { "title": "Celebrar los progresos", "desc": "Revisamos el avance, ajustamos si hace falta y reconocemos tu crecimiento." }
         ]
       },
       "offerSection": {
@@ -263,6 +278,15 @@
         ],
         "cta": "Reserva tu consulta gratuita",
         "frictionRemover": "Sin compromiso. Confidencialidad total."
+      },
+      "aboutSection": {
+        "headline": "Quiénes somos",
+        "content": "Somos un equipo especializado con más de 10 años de experiencia ayudando a niños y adultos a superar el bullying y el mobbing. Después de acompañar a cientos de personas, creemos en el poder de la escucha activa, las estrategias prácticas y un plan de acción personalizado. Mereces una vida con paz, confianza y bienestar.",
+        "stats": [
+          { "number": "10+", "label": "Años de experiencia" },
+          { "number": "500+", "label": "Personas ayudadas" },
+          { "number": "50+", "label": "Artículos y menciones" }
+        ]
       },
       "aboutTeam": {
         "headline": "Tu equipo de expertos",
@@ -327,6 +351,46 @@
         ],
         "cta": "Reserva tu consulta gratuita",
         "frictionRemover": "Sin compromiso. Confidencialidad garantizada."
+      },
+      "packages": {
+        "headline": "Servicios y paquetes",
+        "intro": "Identificamos tus objetivos, diseñamos un plan personalizado y te acompañamos con la actitud y las herramientas para avanzar.",
+        "tiers": [
+          { "name": "Fundamentos", "price": "Consulta", "period": "inicial", "features": ["1 sesión de 60 min", "Evaluación de tu situación", "Recomendación personalizada"], "cta": "Reserva" },
+          { "name": "Momentum", "price": "6", "period": "sesiones", "features": ["6 sesiones de 60 min", "Soporte por correo entre sesiones", "Plan de acción y seguimiento"], "cta": "Reserva" },
+          { "name": "Transformación", "price": "12", "period": "sesiones", "features": ["12 sesiones de 60 min", "Soporte prioritario", "Herramientas y evaluaciones", "Materiales y métricas"], "cta": "Reserva" }
+        ]
+      },
+      "diplomas": {
+        "headline": "Credenciales y enfoque",
+        "items": ["Coaching de comunicación y gestión emocional", "Especialización en bullying y mobbing", "Métodos avalados por resultados", "Formación continua y actualización"]
+      },
+      "insightsToInspire": {
+        "title": "Reflexiones para inspirarte",
+        "subtitle": "Artículos recientes sobre superar el acoso y recuperar el bienestar emocional.",
+        "ctaText": "Visita el blog"
       }
+    },
+    "blog": {
+      "heroTitle": "Blog",
+      "heroSubtitle": "Artículos y recursos sobre bullying, mobbing y habilidades sociales",
+      "readArticle": "Leer artículo",
+      "readArticleA11y": "Leer artículo: {title}",
+      "nextPage": "Página siguiente",
+      "prevPage": "Página anterior"
+    },
+    "blogPost": {
+      "backToBlog": "Volver al blog",
+      "publishedOn": "Publicado el",
+      "by": "por",
+      "categories": "Categorías",
+      "tags": "Etiquetas",
+      "featuredArticles": "Artículos destacados",
+      "bookDiscoveryTitle": "Reserva tu consulta de descubrimiento gratuita",
+      "bookDiscoverySubtitle": "Reserva tu primera sesión o haznos cualquier consulta. ¡Estamos aquí para ayudarte!",
+      "scheduleCall": "Reservar una consulta",
+      "newsletterTitle": "Newsletter",
+      "newsletterSubtitle": "Suscríbete para recibir consejos y recursos sobre bullying, mobbing y habilidades sociales.",
+      "subscribeNow": "Suscribirme"
     }
   }

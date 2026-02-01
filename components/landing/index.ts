@@ -1,0 +1,11 @@
+export { HeroIntro } from "./HeroIntro";
+export { FourFeatures } from "./FourFeatures";
+export { AboutSection } from "./AboutSection";
+export { WhoIHelp } from "./WhoIHelp";
+export { DiplomasCertificates } from "./DiplomasCertificates";
+export { CoachingProcess } from "./CoachingProcess";
+export { TestimonialsSection } from "./TestimonialsSection";
+export { ServicesPackages } from "./ServicesPackages";
+export { QuestionsAnswers } from "./QuestionsAnswers";
+export { ScheduleCTA } from "./ScheduleCTA";
+export { InsightsToInspire } from "./InsightsToInspire";

@@ -12,32 +12,23 @@ export function Navbar() {
   const t = useTranslations('navbar')
   const locale = useLocale()
 
-  // Generar el prefix correcte per als links
   const getLocalePath = (path: string = '') => {
-    // Si és un anchor (comença amb #), sempre apuntar a la landing page amb l'anchor
     if (path.startsWith('#')) {
       if (locale === routing.defaultLocale) {
-        return `/${path}` // ex: /#sobre-nosaltres
+        return `/${path}`
       }
-      return `/${locale}${path}` // ex: /es#sobre-nosaltres
+      return `/${locale}${path}`
     }
-    
-    // Per a paths normals
     if (locale === routing.defaultLocale) {
-      // Català: sense prefix
       return path ? `/${path}` : '/'
     }
-    // Espanyol: amb prefix
     return path ? `/${locale}/${path}` : `/${locale}`
   }
 
-  // Obtenir el path de contacte segons l'idioma
   const getContactPath = () => {
-    const contactPath = 'contacte' // Sempre utilitzar 'contacte' per ambdós idiomes
-    return getLocalePath(contactPath)
+    return getLocalePath('contacte')
   }
 
-  // Close menu when clicking outside
   useEffect(() => {
     const closeMenu = () => setIsOpen(false)
     window.addEventListener('click', closeMenu)
@@ -45,18 +36,17 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="border-b sticky top-0 z-50 bg-white">
-      <div className="container flex h-16 items-center justify-between py-4">
-        <Link href={getLocalePath()} className="flex items-center gap-2">
-          <Heart className="h-6 w-6 text-rose-500" />
-          <span className="text-xl font-bold">Stop Bullying</span>
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-life-text/10 font-sora">
+      <div className="container flex h-16 items-center justify-between">
+        <Link href={getLocalePath()} className="flex items-center gap-2 text-life-text hover:opacity-80 transition-opacity">
+          <Heart className="h-6 w-6 text-life-primary" />
+          <span className="text-lg font-semibold tracking-tight">Stop Bullying</span>
         </Link>
 
-        {/* Mobile menu button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 rounded-md hover:bg-life-text/5 transition-colors"
           aria-label={t('openMenu')}
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-controls="mobile-menu"
           onClick={(e) => {
             e.stopPropagation()
@@ -64,91 +54,67 @@ export function Navbar() {
           }}
         >
           {isOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-6 w-6 text-life-text" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-6 w-6 text-life-text" />
           )}
         </button>
 
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-6">
-          <Link href={getLocalePath()} className="text-sm font-medium hover:text-rose-500 transition-colors">
-            {t('home')}
-          </Link>
-          <Link href={getLocalePath('blog')} className="text-sm font-medium hover:text-rose-500 transition-colors">
-            {t('blog')}
-          </Link>
-          <Link href={getLocalePath('#sobre-nosaltres')} className="text-sm font-medium hover:text-rose-500 transition-colors">
+        <nav className="hidden md:flex items-center gap-8">
+          <Link href={getLocalePath('#sobre-nosaltres')} className="text-sm font-medium text-life-text/80 hover:text-life-primary transition-colors">
             {t('about')}
           </Link>
-          <Link href={getLocalePath('#beneficis')} className="text-sm font-medium hover:text-rose-500 transition-colors">
-            {t('benefits')}
+          <Link href={getLocalePath('#a-qui-ajudem')} className="text-sm font-medium text-life-text/80 hover:text-life-primary transition-colors">
+            {t('whoWeHelp')}
           </Link>
-          <Link href={getLocalePath('#testimonis')} className="text-sm font-medium hover:text-rose-500 transition-colors">
-            {t('testimonials')}
+          <Link href={getLocalePath('#proces')} className="text-sm font-medium text-life-text/80 hover:text-life-primary transition-colors">
+            {t('process')}
           </Link>
-          <Link href={getLocalePath('#com-funciona')} className="text-sm font-medium hover:text-rose-500 transition-colors">
-            {t('howItWorks')}
+          <Link href={getLocalePath('#serveis')} className="text-sm font-medium text-life-text/80 hover:text-life-primary transition-colors">
+            {t('services')}
+          </Link>
+          <Link href={getLocalePath('#faq')} className="text-sm font-medium text-life-text/80 hover:text-life-primary transition-colors">
+            {t('faq')}
+          </Link>
+          <Link href={getLocalePath('blog')} className="text-sm font-medium text-life-text/80 hover:text-life-primary transition-colors">
+            {t('blog')}
           </Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
           <Link href={getContactPath()}>
-            <Button className="bg-rose-500 hover:bg-rose-600">{t('contactUs')}</Button>
+            <Button className="bg-life-accent text-life-text hover:opacity-90 font-semibold rounded-[40px] px-5">
+              {t('bookSession')}
+            </Button>
           </Link>
         </div>
 
-        {/* Mobile navigation */}
         {isOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-white border-b shadow-lg md:hidden">
-            <nav className="container py-4 flex flex-col gap-4">
-              <Link 
-                href={getLocalePath()}
-                className="text-sm font-medium hover:text-rose-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('home')}
-              </Link>
-              <Link 
-                href={getLocalePath('blog')}
-                className="text-sm font-medium hover:text-rose-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('blog')}
-              </Link>
-              <Link 
-                href={getLocalePath('#sobre-nosaltres')}
-                className="text-sm font-medium hover:text-rose-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
+          <div id="mobile-menu" className="absolute top-16 left-0 right-0 bg-white border-b border-life-text/10 shadow-lg md:hidden">
+            <nav className="container py-6 flex flex-col gap-4">
+              <Link href={getLocalePath('#sobre-nosaltres')} className="text-sm font-medium text-life-text hover:text-life-primary" onClick={() => setIsOpen(false)}>
                 {t('about')}
               </Link>
-              <Link 
-                href={getLocalePath('#beneficis')}
-                className="text-sm font-medium hover:text-rose-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('benefits')}
+              <Link href={getLocalePath('#a-qui-ajudem')} className="text-sm font-medium text-life-text hover:text-life-primary" onClick={() => setIsOpen(false)}>
+                {t('whoWeHelp')}
               </Link>
-              <Link 
-                href={getLocalePath('#testimonis')}
-                className="text-sm font-medium hover:text-rose-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('testimonials')}
+              <Link href={getLocalePath('#proces')} className="text-sm font-medium text-life-text hover:text-life-primary" onClick={() => setIsOpen(false)}>
+                {t('process')}
               </Link>
-              <Link 
-                href={getLocalePath('#com-funciona')}
-                className="text-sm font-medium hover:text-rose-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('howItWorks')}
+              <Link href={getLocalePath('#serveis')} className="text-sm font-medium text-life-text hover:text-life-primary" onClick={() => setIsOpen(false)}>
+                {t('services')}
               </Link>
-              <div className="flex items-center gap-4 pt-2">
+              <Link href={getLocalePath('#faq')} className="text-sm font-medium text-life-text hover:text-life-primary" onClick={() => setIsOpen(false)}>
+                {t('faq')}
+              </Link>
+              <Link href={getLocalePath('blog')} className="text-sm font-medium text-life-text hover:text-life-primary" onClick={() => setIsOpen(false)}>
+                {t('blog')}
+              </Link>
+              <div className="flex items-center gap-4 pt-4 border-t border-life-text/10">
                 <LanguageSwitcher />
-                <Link href={getContactPath()} onClick={() => setIsOpen(false)}>
-                  <Button className="bg-rose-500 hover:bg-rose-600">{t('contactUs')}</Button>
+                <Link href={getContactPath()} onClick={() => setIsOpen(false)} className="w-full">
+                  <Button className="w-full bg-life-accent text-life-text hover:opacity-90 font-semibold rounded-[40px]">{t('bookSession')}</Button>
                 </Link>
               </div>
             </nav>

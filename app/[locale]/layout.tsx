@@ -47,8 +47,8 @@ export default async function LocaleLayout({
     : '';
 
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className="scroll-smooth">
+      <body className="min-h-screen bg-white text-[#003242] antialiased font-sora">
         <GoogleAnalytics />
         <NextIntlClientProvider>
           <Navbar />

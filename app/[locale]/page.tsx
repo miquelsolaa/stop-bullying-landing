@@ -1,6 +1,7 @@
 import { generateMetadata as generateSiteMetadata } from '../metadata';
 import type { Metadata } from 'next';
 import LandingClient from './LandingClient';
+import { getBlogPosts } from '@/utils/getBlogPosts';
 
 const titles = {
   ca: "Supera el bullying i el mobbing a Barcelona | Ajuda especialitzada",
@@ -20,7 +21,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   });
 }
 
-export default function LandingPage() {
-  return <LandingClient />;
+export default async function LandingPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const resolvedLocale = locale === 'es' ? 'es' : 'ca';
+  const result = await getBlogPosts(resolvedLocale, 1, 3);
+  const recentPosts = result && typeof result === 'object' && 'posts' in result ? result.posts : [];
+  return <LandingClient recentPosts={recentPosts} />;
 }
 

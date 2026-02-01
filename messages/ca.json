@@ -25,30 +25,37 @@
       "testimonials": "Testimonis",
       "howItWorks": "Com Funciona",
       "contactUs": "Contacta'ns",
-      "openMenu": "Obrir menú de navegació"
+      "openMenu": "Obrir menú de navegació",
+      "whoWeHelp": "A qui ajudem",
+      "process": "Procés",
+      "services": "Serveis",
+      "faq": "Preguntes freqüents",
+      "bookSession": "Reserva una sessió"
     },
     "contact": {
-      "title": "Posa't en contacte amb nosaltres",
+      "title": "Contacta'ns!",
       "subtitle": "Reserva la teva primera sessió o fes-nos qualsevol consulta. Estem aquí per ajudar-te!",
-      "formTitle": "Envia'ns un missatge",
-      "formSubtitle": "Omple el formulari i ens posarem en contacte amb tu el més aviat possible.",
-      "name": "Nom",
-      "namePlaceholder": "El teu nom complet",
+      "formTitle": "Consulta de descobriment gratuïta",
+      "formSubtitle": "Reserva la teva consulta gratuïta de 30 minuts o escriu-nos el que necessitis.",
+      "name": "El teu nom",
+      "namePlaceholder": "Introdueix el teu nom",
       "email": "Correu electrònic",
-      "emailPlaceholder": "El teu correu electrònic",
+      "emailPlaceholder": "exemple@correu.com",
       "phone": "Telèfon",
-      "phonePlaceholder": "El teu número de telèfon",
+      "phonePlaceholder": "Introdueix el teu telèfon",
       "message": "Missatge",
-      "messagePlaceholder": "Explica'ns com podem ajudar-te",
+      "messagePlaceholder": "Escriu aquí",
       "sending": "Enviant...",
-      "submit": "Envia la teva sol·licitud",
-      "success": "Gràcies pel teu missatge! Et contactarem aviat.",
-      "error": "Hi ha hagut un error. Si us plau, torna-ho a provar més tard.",
+      "submit": "Envia el missatge",
+      "success": "El formulari s'ha enviat correctament!",
+      "error": "Hi ha hagut un error. Si us plau, revisa els camps i torna-ho a provar.",
       "contactInfo": "Informació de contacte",
+      "callMe": "Truca'm",
       "emailLabel": "Correu electrònic",
       "phoneLabel": "Telèfon",
-      "ctaTitle": "Fes el primer pas cap a una comunicació més efectiva",
-      "ctaSubtitle": "Contacta'ns avui mateix i comença el teu camí cap a relacions més saludables i una millor autoestima.",
+      "locationLabel": "Ubicació",
+      "ctaTitle": "Contacta'ns i et respondrem el més aviat possible",
+      "ctaSubtitle": "Reserva una sessió o envia'ns la teva consulta. Estem aquí per ajudar-te.",
       "ctaButton": "Reserva una consulta"
     },
     "benefits": {
@@ -152,6 +159,14 @@
     "footer": {
       "brand": "Stop Bullying",
       "desc": "Servei de coaching de comunicació a Terrassa, especialitzat en ajudar nens i adults a superar el bullying, el mobbing i a desenvolupar habilitats socials per millorar les seves relacions personals i laborals.",
+      "contactInfo": "Informació de contacte",
+      "callMe": "Truca'm",
+      "emailLabel": "Correu electrònic",
+      "locationLabel": "Ubicació",
+      "quickLinks": "Enllaços ràpids",
+      "stayConnected": "Mantén-te connectat",
+      "newsletterText": "Subscriu-te per rebre consells i recursos sobre bullying, mobbing i habilitats socials.",
+      "newsletterSignup": "Newsletter",
       "contact": "Contacte",
       "location": "Terrassa, Barcelona",
       "email": "contacte@stopbullyingmobbing.com",
@@ -164,8 +179,9 @@
     },
     "landing": {
       "aboveTheFold": {
-        "eyebrow": "Per a nens i adults que pateixen bullying o mobbing",
+        "eyebrow": "Reserva una sessió",
         "headline": "Supera el bullying i el mobbing amb resultats des de la primera sessió",
+        "subtitle": "Coaching personalitzat per superar l'assetjament, recuperar la confiança i tornar a tenir el control de la teva vida.",
         "valueBullets": [
           "Resultats des de la primera sessió",
           "Sessions presencials a Terrassa o online",
@@ -211,6 +227,12 @@
         ],
         "mediaMentions": ""
       },
+      "fourFeatures": [
+        { "title": "Recuperar la confiança", "desc": "Torna a confiar en tu mateix i a recuperar l'autoestima després de situacions d'assetjament." },
+        { "title": "Equilibri emocional", "desc": "Aprèn a gestionar l'estrès i les emocions per millorar el teu benestar i la teva vida diària." },
+        { "title": "Trobar el teu camí", "desc": "Clarifica els teus objectius i desenvolupa un pla d'acció personalitzat per avançar." },
+        { "title": "Gestionar l'estrès", "desc": "Estratègies pràctiques per mantenir-te un pas per davant i protegir la teva salut emocional." }
+      ],
       "benefitsSection": {
         "headline": "Recupera la teva confiança i el control de la teva vida",
         "bullets": [
@@ -235,20 +257,13 @@
         ]
       },
       "howItWorks": {
-        "headline": "Tres passos simples cap a la llibertat",
+        "headline": "El procés de coaching",
         "steps": [
-          {
-            "title": "1. Consulta inicial (60 min)",
-            "desc": "Analitzem la teva situació i definim un pla d'acció personalitzat"
-          },
-          {
-            "title": "2. Sessions de coaching (6-8 sessions)",
-            "desc": "Desenvolupem les habilitats i estratègies que necessites per superar la situació"
-          },
-          {
-            "title": "3. Resultats duradors",
-            "desc": "Apliques les eines a la vida real i recuperes la teva confiança i benestar"
-          }
+          { "title": "Clarificar la visió", "desc": "Identifiquem la teva situació i definim un pla d'acció personalitzat." },
+          { "title": "Identificar obstacles", "desc": "Treballem les creences limitants i les eines que et calen." },
+          { "title": "Pla d'acció personalitzat", "desc": "Dissenem passos clars i assolibles per avançar." },
+          { "title": "Acompanyament i suport", "desc": "Seguiment regular i eines per mantenir-te en el camí." },
+          { "title": "Celebrar els progressos", "desc": "Revisem l'avanç, ajustem si cal i reconeixem el teu creixement." }
         ]
       },
       "offerSection": {
@@ -261,6 +276,15 @@
         ],
         "cta": "Reserva la teva consulta gratuïta",
         "frictionRemover": "Sense compromís. Confidencialitat total."
+      },
+      "aboutSection": {
+        "headline": "Qui som",
+        "content": "Som un equip especialitzat amb més de 10 anys d'experiència ajudant nens i adults a superar el bullying i el mobbing. Després d'acompanyar centenars de persones, creiem en el poder de l'escolta activa, les estratègies pràctiques i un pla d'acció personalitzat. Tu mereixes una vida amb pau, confiança i benestar.",
+        "stats": [
+          { "number": "10+", "label": "Anys d'experiència" },
+          { "number": "500+", "label": "Persones ajudades" },
+          { "number": "50+", "label": "Articles i mencions" }
+        ]
       },
       "aboutTeam": {
         "headline": "El teu equip d'experts",
@@ -325,6 +349,46 @@
         ],
         "cta": "Reserva la teva consulta gratuïta",
         "frictionRemover": "Sense compromís. Confidencialitat garantida."
+      },
+      "packages": {
+        "headline": "Serveis i paquets",
+        "intro": "Identifiquem els teus objectius, dissenyem un pla personalitzat i t'acompanyem amb l'actitud i les eines per avançar.",
+        "tiers": [
+          { "name": "Fonaments", "price": "Consulta", "period": "inicial", "features": ["1 sessió de 60 min", "Avaluació de la teva situació", "Recomanació personalitzada"], "cta": "Reserva" },
+          { "name": "Momentum", "price": "6", "period": "sessions", "features": ["6 sessions de 60 min", "Suport per correu entre sessions", "Pla d'acció i seguiment"], "cta": "Reserva" },
+          { "name": "Transformació", "price": "12", "period": "sessions", "features": ["12 sessions de 60 min", "Suport prioritari", "Eines i avaluacions", "Materials i mètriques"], "cta": "Reserva" }
+        ]
+      },
+      "diplomas": {
+        "headline": "Credencials i enfocament",
+        "items": ["Coaching de comunicació i gestió emocional", "Especialització en bullying i mobbing", "Mètodes avalats per resultats", "Formació contínua i actualització"]
+      },
+      "insightsToInspire": {
+        "title": "Reflexions per inspirar-te",
+        "subtitle": "Articles recents sobre superar l'assetjament i recuperar el benestar emocional.",
+        "ctaText": "Visita el blog"
       }
+    },
+    "blog": {
+      "heroTitle": "Blog",
+      "heroSubtitle": "Articles i recursos sobre bullying, mobbing i habilitats socials",
+      "readArticle": "Llegir l'article",
+      "readArticleA11y": "Llegir l'article: {title}",
+      "nextPage": "Pàgina següent",
+      "prevPage": "Pàgina anterior"
+    },
+    "blogPost": {
+      "backToBlog": "Tornar al blog",
+      "publishedOn": "Publicat el",
+      "by": "per",
+      "categories": "Categories",
+      "tags": "Etiquetes",
+      "featuredArticles": "Articles destacats",
+      "bookDiscoveryTitle": "Reserva la teva consulta de descobriment gratuïta",
+      "bookDiscoverySubtitle": "Reserva la teva primera sessió o fes-nos qualsevol consulta. Estem aquí per ajudar-te!",
+      "scheduleCall": "Reserva una consulta",
+      "newsletterTitle": "Newsletter",
+      "newsletterSubtitle": "Subscriu-te per rebre consells i recursos sobre bullying, mobbing i habilitats socials.",
+      "subscribeNow": "Subscriure'm"
     }
   }
